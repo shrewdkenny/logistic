@@ -1,6 +1,17 @@
 <template>
-  <div class="flex items-center justify-center">
-    <Button>login</Button>
+  <div
+    class="mt-36 flex cursor-pointer flex-col items-center justify-center gap-2 lg:mt-48 lg:flex-row lg:gap-5"
+  >
+    <Button
+      variant="outline"
+      class="bg-[#66cc66] px-24 py-6 text-[#ffffff] lg:px-20"
+      >Personal Deliveries</Button
+    >
+    <Button
+      variant="outline"
+      class="border border-black px-24 py-6 hover:border-[#66cc66] hover:text-[#66cc66] lg:px-20"
+      >Business Deliveries</Button
+    >
   </div>
 </template>
 

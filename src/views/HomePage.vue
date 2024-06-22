@@ -1,8 +1,10 @@
 <template>
-  <div class="bg-[#ffffff] px-28 py-10">
+  <div class="bg-[#ffffff] py-5 lg:px-28 lg:py-10">
     <HomePageHeader />
-    <HomePageCarousel />
-    <HomePageButtons />
+    <div data-aos="fade-left">
+      <HomePageCarousel />
+      <HomePageButtons />
+    </div>
   </div>
 </template>
 
@@ -16,7 +18,7 @@ export default {
   components: {
     HomePageHeader,
     HomePageCarousel,
-    HomePageButtons
+    HomePageButtons,
   },
   setup() {
     return {};

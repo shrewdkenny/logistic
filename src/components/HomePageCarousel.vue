@@ -1,15 +1,20 @@
 <template>
-  <div class="mt-5 flex flex-col items-center" data-aos="zoom-in">
-    <img :src="currentImage" class="h-1/2 w-1/3" data-aos="zoom-in" />
-    <h1 class="mt-4 text-2xl font-normal tracking-wider" data-aos="zoom-in">
+  <div class="mt-5 flex cursor-pointer flex-col items-center">
+    <img :src="currentImage" class="h-[200px]" />
+    <h1 class="mt-10 text-2xl font-normal tracking-wider">
       {{ carouselFirstWritings[currentIndex] }}
     </h1>
-    <p data-aos="zoom-in">{{ carouselSecondWritings[currentIndex] }}</p>
+    <p
+      class="mt-5 text-sm font-normal tracking-wider text-gray-500"
+      data-aos="zoom-in"
+    >
+      {{ carouselSecondWritings[currentIndex] }}
+    </p>
   </div>
 </template>
 
 <script>
-import { ref, computed, onMounted, watch } from "vue";
+import { ref, computed, onMounted } from "vue";
 import image1 from "@/assets/images/illustration1.png";
 import image2 from "@/assets/images/illustration2.png";
 import image3 from "@/assets/images/illustration3.png";
