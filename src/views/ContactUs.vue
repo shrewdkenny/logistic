@@ -1,12 +1,14 @@
 <template>
-  <div class="bg-[#ffffff] px-5 py-5 lg:py-10 lg:px-28">
+  <div class="bg-[#ffffff] px-5 py-5 lg:px-28 lg:py-10">
     <HomePageHeader />
     <div
       class="mt-10 flex flex-col justify-center gap-20 lg:flex-row"
       data-aos="fade-left"
     >
       <div class="flex flex-col gap-4">
-        <h1>Have Issues? Send Us a Message!</h1>
+        <h1 class="font-normal tracking-wider">
+          Have Issues? Send Us a Message!
+        </h1>
         <div>
           <label for="email" class="text-sm">Your Email</label>
           <Input />
@@ -16,7 +18,7 @@
           <Input />
         </div>
 
-        <div>
+        <div class="flex flex-col">
           <h1>message</h1>
           <Textarea />
         </div>
@@ -27,7 +29,14 @@
         >
       </div>
 
-      <div>contact details</div>
+      <div>
+        <h1 class="font-normal tracking-wider">Contact Details</h1>
+        <p class="text-md mt-4 text-[#40bd57]">+234 814 337 1347</p>
+        <div class="mt-3 flex gap-5">
+          <img src="@/assets/images/instagram.svg" alt="" class="w-5" />
+          <p class="text-[#40bd57]">@greensexlogistic</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
