@@ -19,7 +19,7 @@
         </div>
 
         <div class="flex flex-col">
-          <h1>message</h1>
+          <h1>Message</h1>
           <Textarea />
         </div>
         <Button
@@ -32,7 +32,7 @@
       <div>
         <h1 class="font-normal tracking-wider">Contact Details</h1>
         <p class="text-md mt-4 text-[#40bd57]">+234 814 337 1347</p>
-        <div class="mt-3 flex gap-5">
+        <div class="mt-3 flex gap-3">
           <img src="@/assets/images/instagram.svg" alt="" class="w-5" />
           <p class="text-[#40bd57]">@greensexlogistic</p>
         </div>
