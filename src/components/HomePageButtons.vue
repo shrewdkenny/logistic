@@ -4,7 +4,7 @@
   >
     <Button
       variant="outline"
-      class="bg-[#66cc66] px-24 py-6 text-[#ffffff] lg:px-20"
+      class="bg-[#66cc66] px-24 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black lg:px-20"
       >Personal Deliveries</Button
     >
     <Button
