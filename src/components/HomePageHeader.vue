@@ -15,11 +15,13 @@
         </p></RouterLink
       >
       <p class="mb-2 text-xl font-extrabold text-[#40bd57]">.</p>
-      <p
-        class="text-[#84b18c] hover:underline hover:underline-offset-1 lg:text-[#40bd57]"
+      <RouterLink to="/pricing">
+        <p
+          class="text-[#84b18c] hover:underline hover:underline-offset-1 lg:text-[#40bd57]"
+        >
+          Pricing
+        </p></RouterLink
       >
-        Pricing
-      </p>
     </div>
   </div>
 </template>
