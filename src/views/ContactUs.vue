@@ -2,7 +2,7 @@
   <div class="bg-[#ffffff] px-5 py-5 lg:px-28 lg:py-10">
     <HomePageHeader />
     <div
-      class="mt-10 flex flex-col justify-center gap-20 lg:flex-row"
+      class="mt-10 flex flex-col justify-center lg:flex-row lg:gap-20"
       data-aos="fade-left"
     >
       <div class="flex flex-col gap-4">
@@ -28,7 +28,6 @@
           >Send message</Button
         >
       </div>
-
       <div>
         <h1 class="font-normal tracking-wider">Contact Details</h1>
         <p class="text-md mt-4 text-[#40bd57]">+234 814 337 1347</p>
