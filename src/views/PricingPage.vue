@@ -1,15 +1,17 @@
 <template>
   <div class="bg-[#ffffff] px-5 py-5 lg:px-28 lg:py-10">
     <HomePageHeader />
-    <div class="mt-4 flex flex-col items-center justify-center lg:mt-20">
-      <!-- data-aos="fade-left" -->
+    <div
+      class="mt-4 flex flex-col items-center justify-center lg:mt-20"
+      data-aos="fade-left"
+    >
       <h1
-        class="rounded-lg border border-b-4 border-[#c5c7cd] bg-[#fcfcfc] px-14 py-3 text-xl font-semibold shadow shadow-[#c0c0c0] lg:px-48 lg:py-3"
+        class="w-[100%] rounded-lg border border-b-4 border-[#c5c7cd] bg-[#fcfcfc] px-14 py-3 text-center text-xl font-normal shadow shadow-[#c0c0c0] lg:w-[600px] lg:py-3"
       >
         Calculate Dispatch Cost
       </h1>
       <div
-        class="mt-6 flex w-[500px] flex-col rounded-xl border-2 border-[#c0c0c0]"
+        class="mt-8 flex w-[100%] flex-col rounded-xl border-2 border-[#c0c0c0] lg:w-[500px]"
       >
         <div class="flex items-center gap-1 border-b-2 border-[#c0c0c0] p-2">
           <img src="@/assets/images/bike.png" alt="" class="w-6" />
