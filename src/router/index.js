@@ -4,6 +4,8 @@ import ContactUs from "@/views/ContactUs.vue";
 import PricingPage from "@/views/PricingPage.vue";
 import PersonalDeliveries from "@/views/PersonalDeliveries.vue";
 
+import BusinessDeliveriesSignUp from "@/views/BusinessDeliveriesSignUp.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -24,8 +26,13 @@ const router = createRouter({
     },
     {
       path: "/personalDeliveries",
-      name: "personal-deliveries",
+      name: "personalDeliveries",
       component: PersonalDeliveries,
+    },
+    {
+      path: "/businessDeliveries",
+      name: "businessDeliveries",
+      component: BusinessDeliveriesSignUp,
     },
   ],
 });
