@@ -1,8 +1,7 @@
 <template>
   <div class="bg-[#ffffff] py-5 lg:px-28 lg:py-8">
     <HomePageHeader />
-    <div class="">
-      <!-- data-aos="fade-left" -->
+    <div class="" data-aos="fade-left">
       <PersonalDeliveriesHeader />
       <PersonalDeliveriesForm />
     </div>
