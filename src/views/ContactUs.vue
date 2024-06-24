@@ -2,7 +2,7 @@
   <div class="bg-[#ffffff] px-5 py-5 lg:px-28 lg:py-10">
     <HomePageHeader />
     <div
-      class="mt-10 flex flex-col justify-center lg:flex-row lg:gap-20"
+      class="mt-10 flex flex-col justify-center gap-4 lg:flex-row lg:gap-20"
       data-aos="fade-left"
     >
       <div class="flex flex-col gap-4">
