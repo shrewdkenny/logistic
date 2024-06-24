@@ -2,11 +2,14 @@
   <div
     class="mt-36 flex cursor-pointer flex-col items-center justify-center gap-2 lg:mt-48 lg:flex-row lg:gap-5"
   >
-    <Button
-      variant="outline"
-      class="bg-[#66cc66] px-24 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black lg:px-20"
-      >Personal Deliveries</Button
-    >
+    <RouterLink to="/personalDeliveries">
+      <Button
+        variant="outline"
+        class="bg-[#66cc66] px-24 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black lg:px-20"
+        >Personal Deliveries</Button
+      >
+    </RouterLink>
+
     <Button
       variant="outline"
       class="border border-black px-24 py-6 hover:border-[#66cc66] hover:text-[#66cc66] lg:px-20"
