@@ -1,9 +1,9 @@
 <template>
   <div
-    class="mt-10 flex w-full flex-col rounded-xl p-10 lg:shadow-md lg:shadow-[#40bd57]"
+    class="mt-10 flex w-full flex-col rounded-xl px-4 lg:p-10 lg:shadow-md lg:shadow-[#40bd57]"
   >
-    <div class="flex gap-10">
-      <div class="flex w-1/2 flex-col gap-5">
+    <div class="flex flex-col gap-10 lg:flex-row">
+      <div class="flex flex-col gap-5 lg:w-1/2">
         <div>
           <label for="item" class="text-sm">Item</label>
           <Input />
@@ -13,14 +13,14 @@
           <Input />
         </div>
       </div>
-      <div class="flex w-1/2 flex-col">
+      <div class="flex flex-col lg:w-1/2">
         <h1>Description</h1>
         <Textarea class="h-32" />
       </div>
     </div>
 
-    <div class="flex gap-10">
-      <div class="flex w-1/2 flex-col gap-5">
+    <div class="flex flex-col gap-10 lg:flex-row">
+      <div class="flex flex-col gap-5 lg:w-1/2">
         <h1 class="mt-10 text-2xl font-medium">PICK UP</h1>
         <div>
           <label for="Name" class="text-sm">Name</label>
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <div class="flex w-1/2 flex-col gap-5">
+      <div class="flex flex-col gap-5 lg:w-1/2">
         <h1 class="mt-10 text-2xl font-medium">DROP OFF</h1>
         <div>
           <label for="Name" class="text-sm">Name</label>
@@ -57,7 +57,7 @@
           <label for="Phone Number" class="text-sm">Phone Number</label>
           <Input
             placeholder="+234-"
-            class="px-2 placeholder:text-lg placeholder:tracking-wide placeholder:text-black"
+            class="px-2 placeholder:text-lg placeholder:tracking-wide placeholder:text-black lg:px-2"
           />
         </div>
 
@@ -78,7 +78,7 @@
     <div class="mt-10 flex justify-center">
       <Button
         variant="outline"
-        class="bg-[#66cc66] py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black lg:px-20"
+        class="bg-[#66cc66] px-20 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
         >Proceed</Button
       >
     </div>
