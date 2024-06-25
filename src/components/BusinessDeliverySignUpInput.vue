@@ -1,9 +1,9 @@
 <template>
-  <div class="relative mt-7">
+  <div class="relative mt-7 w-full">
     <input
       :type="type"
       :placeholder="placeholder"
-      class="w-[450px] rounded-lg border border-black py-3 px-2"
+      class="rounded-lg border border-black py-3 px-2 w-[100%]"
     />
     <label for="first-name" class="absolute bottom-10 left-5 bg-white px-2">{{
       label

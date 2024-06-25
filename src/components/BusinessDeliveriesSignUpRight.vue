@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex w-full flex-col lg:w-1/2">
     <h1 class="text-center text-3xl font-normal leading-9">Create Account</h1>
-    <div>
+    <div class="flex flex-col gap-2" >
       <BusinessDeliverySignUpInput label="First Name" />
       <BusinessDeliverySignUpInput label="Last Name" />
       <BusinessDeliverySignUpInput
@@ -19,10 +19,10 @@
       </div>
       <Button
         variant="outline"
-        class="mt-8 w-[450px] bg-[#66cc66] py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
+        class="mt-8 w-[100%] bg-[#66cc66] py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
         >Create Account</Button
       >
-      <p class="text-center text-sm font-normal mt-5">
+      <p class="mt-5 text-center text-sm font-normal">
         Already have an account? <span class="text-red-500">Log In!</span>
       </p>
     </div>

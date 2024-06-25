@@ -1,8 +1,11 @@
 <template>
   <div class="bg-[#ffffff] px-5 py-5 lg:px-28 lg:py-10">
     <HomePageHeader />
-    <div class="mt-10 flex flex-row justify-between" data-aos="fade-left">
-      <BusinessDeliveriesSignUpLeft />
+    <div
+      class="mt-5 flex flex-row lg:mt-20 lg:justify-between"
+      data-aos="fade-left"
+    >
+      <BusinessDeliveriesSignUpLeft class="hidden lg:flex lg:flex-col" />
       <BusinessDeliveriesSignUpRight />
     </div>
   </div>
