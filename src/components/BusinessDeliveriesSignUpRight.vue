@@ -1,7 +1,7 @@
 <template>
   <div class="flex w-full flex-col lg:w-1/2">
     <h1 class="text-center text-3xl font-normal leading-9">Create Account</h1>
-    <div class="flex flex-col gap-2" >
+    <div class="flex flex-col gap-2">
       <BusinessDeliverySignUpInput label="First Name" />
       <BusinessDeliverySignUpInput label="Last Name" />
       <BusinessDeliverySignUpInput
@@ -23,7 +23,10 @@
         >Create Account</Button
       >
       <p class="mt-5 text-center text-sm font-normal">
-        Already have an account? <span class="text-red-500">Log In!</span>
+        Already have an account?
+        <RouterLink to="/businessDeliveriesLogin">
+          <span class="text-red-500">Log In!</span></RouterLink
+        >
       </p>
     </div>
   </div>

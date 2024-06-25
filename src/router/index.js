@@ -3,8 +3,8 @@ import HomePage from "@/views/HomePage.vue";
 import ContactUs from "@/views/ContactUs.vue";
 import PricingPage from "@/views/PricingPage.vue";
 import PersonalDeliveries from "@/views/PersonalDeliveries.vue";
-
 import BusinessDeliveriesSignUp from "@/views/BusinessDeliveriesSignUp.vue";
+import BusinessDeliveriesLogin from "@/views/BusinessDeliveriesLogin.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,9 +30,14 @@ const router = createRouter({
       component: PersonalDeliveries,
     },
     {
-      path: "/businessDeliveries",
-      name: "businessDeliveries",
+      path: "/businessDeliveriesSignUp",
+      name: "businessDeliveriesSignUp",
       component: BusinessDeliveriesSignUp,
+    },
+    {
+      path: "/businessDeliveriesLogin",
+      name: "businessDeliveriesLogin",
+      component: BusinessDeliveriesLogin,
     },
   ],
 });

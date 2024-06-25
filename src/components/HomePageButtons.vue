@@ -10,7 +10,7 @@
       >
     </RouterLink>
 
-    <RouterLink to="/businessDeliveries">
+    <RouterLink to="/businessDeliveriesSignUp">
       <Button
         variant="outline"
         class="border border-black px-24 py-6 hover:border-[#66cc66] hover:text-[#66cc66] lg:px-20"
