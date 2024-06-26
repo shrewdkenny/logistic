@@ -6,7 +6,7 @@
       class="flex h-40 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
     >
       <h1 class="text-lg font-normal text-[#545c63]">create new dispatch</h1>
-      <img src="@/assets/images/shipping.svg" alt="" class="w-14" />
+      <img :src="shipping" alt="" class="w-14" />
       <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -27,7 +27,7 @@
       class="flex h-40 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
     >
       <h1 class="text-lg font-normal text-[#545c63]">View pending orders</h1>
-      <img src="@/assets/images/pending.svg" alt="" class="w-14" />
+      <img :src="pending" alt="" class="w-14" />
       <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -45,7 +45,7 @@
       class="flex h-40 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
     >
       <h1 class="text-lg font-normal text-[#545c63]">View Order History</h1>
-      <img src="@/assets/images/history.svg" alt="" class="w-14" />
+      <img :src="history" alt="" class="w-14" />
       <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -65,7 +65,7 @@
       class="flex h-40 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
     >
       <h1 class="text-lg font-normal text-[#545c63]">Fund Your Wallet</h1>
-      <img src="@/assets/images/wallet.svg" alt="" class="w-14" />
+      <img :src="wallet" alt="" class="w-14" />
       <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -85,9 +85,20 @@
 </template>
 
 <script>
+import shipping from "@/assets/images/shipping.svg";
+import pending from "@/assets/images/pending.svg";
+import history from "@/assets/images/history.svg";
+import wallet from "@/assets/images/wallet.svg";
 export default {
   name: "Test",
-  created() {},
+  setup() {
+    return {
+      shipping,
+      pending,
+      history,
+      wallet,
+    };
+  },
 };
 </script>
 
