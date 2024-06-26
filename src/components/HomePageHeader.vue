@@ -2,25 +2,25 @@
   <div
     class="flex cursor-pointer flex-col items-center lg:flex-row lg:justify-between"
   >
-    <RouterLink to="/">
+    <router-link to="/">
       <img src="@/assets/images/greensexlogo.svg" alt="" class="w-[200px]"
-    /></RouterLink>
+    /></router-link>
 
     <div class="flex items-center gap-3 text-center">
-      <RouterLink to="/contact"
+      <router-link to="/contact"
         ><p
           class="lg:text-md text-[#84b18c] hover:underline hover:underline-offset-1 lg:text-[#40bd57]"
         >
           Contact Us
-        </p></RouterLink
+        </p></router-link
       >
       <p class="mb-2 text-xl font-extrabold text-[#40bd57]">.</p>
-      <RouterLink to="/pricing">
+      <router-link to="/pricing">
         <p
           class="text-[#84b18c] hover:underline hover:underline-offset-1 lg:text-[#40bd57]"
         >
           Pricing
-        </p></RouterLink
+        </p></router-link
       >
     </div>
   </div>

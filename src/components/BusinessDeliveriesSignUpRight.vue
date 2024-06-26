@@ -24,8 +24,8 @@
       >
       <p class="mt-5 text-center text-sm font-normal">
         Already have an account?
-        <RouterLink to="/businessDeliveriesLogin">
-          <span class="text-red-500">Log In!</span></RouterLink
+        <router-link to="/businessDeliveriesLogin">
+          <span class="text-red-500">Log In!</span></router-link
         >
       </p>
     </div>

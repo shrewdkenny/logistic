@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen cursor-pointer flex-col bg-[#022045]">
-    <RouterLink to="/">
+    <router-link to="/">
       <div class="px-10">
         <img
           src="@/assets/images/greensexlogo2.svg"
@@ -8,7 +8,7 @@
           class="mt-10 w-[150px]"
         />
       </div>
-    </RouterLink>
+    </router-link>
     <AsideLinks />
   </div>
 </template>
