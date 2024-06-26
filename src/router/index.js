@@ -5,7 +5,6 @@ import PricingPage from "@/views/PricingPage.vue";
 import PersonalDeliveries from "@/views/PersonalDeliveries.vue";
 import BusinessDeliveriesSignUp from "@/views/BusinessDeliveriesSignUp.vue";
 import BusinessDeliveriesLogin from "@/views/BusinessDeliveriesLogin.vue";
-import BusinessDashBoard from "@/views/BusinessDashBoard.vue";
 import DashBoard from "@/views/DashBoard.vue";
 
 const router = createRouter({
@@ -40,11 +39,6 @@ const router = createRouter({
       path: "/businessDeliveriesLogin",
       name: "businessDeliveriesLogin",
       component: BusinessDeliveriesLogin,
-    },
-    {
-      path: "/businessDashBoard",
-      name: "businessDashBoard",
-      component: BusinessDashBoard,
     },
     {
       path: "/dashboard",

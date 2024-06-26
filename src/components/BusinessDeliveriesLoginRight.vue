@@ -6,7 +6,7 @@
     <p class="mt-3 flex justify-end text-sm text-[#40bd57] underline">
       Forgot password?
     </p>
-    <router-link to="/businessDashBoard">
+    <router-link to="/dashBoard">
       <Button
         variant="outline"
         class="mt-8 w-[100%] bg-[#66cc66] py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
