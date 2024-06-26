@@ -1,5 +1,7 @@
 <template>
-  <div class="mt-10 grid grid-cols-1 gap-2 px-3 lg:grid-cols-2 lg:px-28">
+  <div
+    class="mt-10 grid cursor-pointer grid-cols-1 gap-2 px-3 lg:grid-cols-2 lg:px-28"
+  >
     <div
       class="flex h-40 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
     >
