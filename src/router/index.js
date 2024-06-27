@@ -6,6 +6,7 @@ import PersonalDeliveries from "@/views/PersonalDeliveries.vue";
 import BusinessDeliveriesSignUp from "@/views/BusinessDeliveriesSignUp.vue";
 import BusinessDeliveriesLogin from "@/views/BusinessDeliveriesLogin.vue";
 import DashBoard from "@/views/DashBoard.vue";
+import NewDispatch from "@/views/NewDispatch.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: "/dashboard",
       name: "dashboard",
       component: DashBoard,
+    },
+    {
+      path: "/new-dispatch",
+      name: "new-dispatch",
+      component: NewDispatch,
     },
   ],
 });
