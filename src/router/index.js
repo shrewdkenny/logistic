@@ -10,6 +10,9 @@ import NewDispatch from "@/views/NewDispatch.vue";
 import PendingOrders from "@/views/PendingOrders.vue";
 import OrderHistory from "@/views/OrderHistory.vue";
 import FundWallet from "@/views/FundWallet.vue";
+import About from "@/views/About.vue";
+import Support from "@/views/Support.vue";
+import Settings from "@/views/Settings.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -69,6 +72,22 @@ const router = createRouter({
       name: "fund-wallet",
       component: FundWallet,
     },
+    {
+      path: "/about",
+      name: "about",
+      component: About,
+    },
+    {
+      path: "/support",
+      name: "support",
+      component: Support,
+    },
+    {
+      path: "/settings",
+      name: "settings",
+      component: Settings,
+    },
+
   ],
 });
 

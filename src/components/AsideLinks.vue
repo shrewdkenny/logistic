@@ -146,114 +146,121 @@
           <p class="text-lg tracking-wide">Fund Wallet</p>
         </div></router-link
       >
-
-      <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fad"
-          data-icon="book-open"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 576 512"
-          class="w-5"
-        >
-          <g class="fa-group">
-            <path
-              fill="currentColor"
-              d="M576 62.75v337.84c0 16.23-13.13 29.77-30 30.66-49.47 2.6-149.52 12.1-218.7 46.92-10.65 5.36-23.28-1.94-23.28-13.49V100.81a15.37 15.37 0 0 1 7.27-13.17c67.24-41.16 176.16-52.48 231-55.59C560.64 31 576 45 576 62.75z"
-              class="text-[#4c5d78]"
-            ></path>
-            <path
-              fill="currentColor"
-              d="M264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31 0 45 0 62.75V400.6c0 16.24 13.13 29.78 30 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63a15.05 15.05 0 0 0-7.25-12.99z"
-              class="text-[#868b93]"
-            ></path>
-          </g>
-        </svg>
-        <p class="text-lg tracking-wide">About GreensEx</p>
-      </div>
+      <router-link to="/about">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="book-open"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 576 512"
+            class="w-5"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M576 62.75v337.84c0 16.23-13.13 29.77-30 30.66-49.47 2.6-149.52 12.1-218.7 46.92-10.65 5.36-23.28-1.94-23.28-13.49V100.81a15.37 15.37 0 0 1 7.27-13.17c67.24-41.16 176.16-52.48 231-55.59C560.64 31 576 45 576 62.75z"
+                class="text-[#4c5d78]"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31 0 45 0 62.75V400.6c0 16.24 13.13 29.78 30 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63a15.05 15.05 0 0 0-7.25-12.99z"
+                class="text-[#868b93]"
+              ></path>
+            </g>
+          </svg>
+          <p class="text-lg tracking-wide">About GreensEx</p>
+        </div></router-link
+      >
     </div>
 
     <div class="gap-2 py-7 text-[#b3b7c0]">
-      <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fad"
-          data-icon="user-headset"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512"
-          class="w-5"
-        >
-          <g class="fa-group">
-            <path
-              fill="currentColor"
-              d="M416 192v16a112.15 112.15 0 0 1-112 112h-96a32 32 0 0 1 0-64h32a32 32 0 0 1 32 32h32a80.09 80.09 0 0 0 80-80v-16c0-88.22-71.78-160-160-160S64 103.78 64 192v16a16 16 0 0 1-32 0v-16C32 86.13 118.13 0 224 0s192 86.13 192 192z"
-              class="fa-secondary"
-            ></path>
-            <path
-              fill="currentColor"
-              d="M320 352h-23.1a174.1 174.1 0 0 1-145.8 0H128A128 128 0 0 0 0 480a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32 128 128 0 0 0-128-128zm-175.65-60.53c-.06-1.17-.35-2.28-.35-3.47a64.07 64.07 0 0 1 64-64h32a64 64 0 0 1 55.41 32H304a48.05 48.05 0 0 0 48-48v-16a128 128 0 0 0-256 0c0 40.42 19.1 76 48.35 99.47z"
-              class="fa-primary"
-            ></path>
-          </g>
-        </svg>
-        <p class="text-lg tracking-wide">Support</p>
-      </div>
-      <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fad"
-          data-icon="cog"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          class="w-5"
-        >
-          <g class="fa-group">
-            <path
-              fill="currentColor"
-              d="M487.75 315.6l-42.6-24.6a192.62 192.62 0 0 0 0-70.2l42.6-24.6a12.11 12.11 0 0 0 5.5-14 249.2 249.2 0 0 0-54.7-94.6 12 12 0 0 0-14.8-2.3l-42.6 24.6a188.83 188.83 0 0 0-60.8-35.1V25.7A12 12 0 0 0 311 14a251.43 251.43 0 0 0-109.2 0 12 12 0 0 0-9.4 11.7v49.2a194.59 194.59 0 0 0-60.8 35.1L89.05 85.4a11.88 11.88 0 0 0-14.8 2.3 247.66 247.66 0 0 0-54.7 94.6 12 12 0 0 0 5.5 14l42.6 24.6a192.62 192.62 0 0 0 0 70.2l-42.6 24.6a12.08 12.08 0 0 0-5.5 14 249 249 0 0 0 54.7 94.6 12 12 0 0 0 14.8 2.3l42.6-24.6a188.54 188.54 0 0 0 60.8 35.1v49.2a12 12 0 0 0 9.4 11.7 251.43 251.43 0 0 0 109.2 0 12 12 0 0 0 9.4-11.7v-49.2a194.7 194.7 0 0 0 60.8-35.1l42.6 24.6a11.89 11.89 0 0 0 14.8-2.3 247.52 247.52 0 0 0 54.7-94.6 12.36 12.36 0 0 0-5.6-14.1zm-231.4 36.2a95.9 95.9 0 1 1 95.9-95.9 95.89 95.89 0 0 1-95.9 95.9z"
-              class="fa-secondary"
-            ></path>
-            <path
-              fill="currentColor"
-              d="M256.35 319.8a63.9 63.9 0 1 1 63.9-63.9 63.9 63.9 0 0 1-63.9 63.9z"
-              class="fa-primary"
-            ></path>
-          </g>
-        </svg>
-        <p class="text-lg tracking-wide">Settings</p>
-      </div>
-      <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fad"
-          data-icon="sign-out"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          class="w-5"
-        >
-          <g class="fa-group">
-            <path
-              fill="currentColor"
-              d="M180 448H96a96 96 0 0 1-96-96V160a96 96 0 0 1 96-96h84a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12H96a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h84a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12z"
-              class="fa-secondary"
-            ></path>
-            <path
-              fill="currentColor"
-              d="M353 88.3l151.9 150.6a24 24 0 0 1 0 34.1l-152 150.8a24.08 24.08 0 0 1-33.9-.1l-21.9-21.9a24.07 24.07 0 0 1 .8-34.7l77.6-71.1H184a23.94 23.94 0 0 1-24-24v-32a23.94 23.94 0 0 1 24-24h191.5l-77.6-71.1a24 24 0 0 1-.7-34.6l21.9-21.9a24 24 0 0 1 33.9-.1z"
-              class="fa-primary"
-            ></path>
-          </g>
-        </svg>
-        <p class="text-lg tracking-wide">Logout</p>
-      </div>
+      <router-link to="/support">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="user-headset"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="w-5"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M416 192v16a112.15 112.15 0 0 1-112 112h-96a32 32 0 0 1 0-64h32a32 32 0 0 1 32 32h32a80.09 80.09 0 0 0 80-80v-16c0-88.22-71.78-160-160-160S64 103.78 64 192v16a16 16 0 0 1-32 0v-16C32 86.13 118.13 0 224 0s192 86.13 192 192z"
+                class="fa-secondary"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M320 352h-23.1a174.1 174.1 0 0 1-145.8 0H128A128 128 0 0 0 0 480a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32 128 128 0 0 0-128-128zm-175.65-60.53c-.06-1.17-.35-2.28-.35-3.47a64.07 64.07 0 0 1 64-64h32a64 64 0 0 1 55.41 32H304a48.05 48.05 0 0 0 48-48v-16a128 128 0 0 0-256 0c0 40.42 19.1 76 48.35 99.47z"
+                class="fa-primary"
+              ></path>
+            </g>
+          </svg>
+          <p class="text-lg tracking-wide">Support</p>
+        </div></router-link
+      >
+      <router-link to="/settings">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="cog"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M487.75 315.6l-42.6-24.6a192.62 192.62 0 0 0 0-70.2l42.6-24.6a12.11 12.11 0 0 0 5.5-14 249.2 249.2 0 0 0-54.7-94.6 12 12 0 0 0-14.8-2.3l-42.6 24.6a188.83 188.83 0 0 0-60.8-35.1V25.7A12 12 0 0 0 311 14a251.43 251.43 0 0 0-109.2 0 12 12 0 0 0-9.4 11.7v49.2a194.59 194.59 0 0 0-60.8 35.1L89.05 85.4a11.88 11.88 0 0 0-14.8 2.3 247.66 247.66 0 0 0-54.7 94.6 12 12 0 0 0 5.5 14l42.6 24.6a192.62 192.62 0 0 0 0 70.2l-42.6 24.6a12.08 12.08 0 0 0-5.5 14 249 249 0 0 0 54.7 94.6 12 12 0 0 0 14.8 2.3l42.6-24.6a188.54 188.54 0 0 0 60.8 35.1v49.2a12 12 0 0 0 9.4 11.7 251.43 251.43 0 0 0 109.2 0 12 12 0 0 0 9.4-11.7v-49.2a194.7 194.7 0 0 0 60.8-35.1l42.6 24.6a11.89 11.89 0 0 0 14.8-2.3 247.52 247.52 0 0 0 54.7-94.6 12.36 12.36 0 0 0-5.6-14.1zm-231.4 36.2a95.9 95.9 0 1 1 95.9-95.9 95.89 95.89 0 0 1-95.9 95.9z"
+                class="fa-secondary"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M256.35 319.8a63.9 63.9 0 1 1 63.9-63.9 63.9 63.9 0 0 1-63.9 63.9z"
+                class="fa-primary"
+              ></path>
+            </g>
+          </svg>
+          <p class="text-lg tracking-wide">Settings</p>
+        </div></router-link
+      >
+      <router-link to="/">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="sign-out"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M180 448H96a96 96 0 0 1-96-96V160a96 96 0 0 1 96-96h84a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12H96a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h84a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12z"
+                class="fa-secondary"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M353 88.3l151.9 150.6a24 24 0 0 1 0 34.1l-152 150.8a24.08 24.08 0 0 1-33.9-.1l-21.9-21.9a24.07 24.07 0 0 1 .8-34.7l77.6-71.1H184a23.94 23.94 0 0 1-24-24v-32a23.94 23.94 0 0 1 24-24h191.5l-77.6-71.1a24 24 0 0 1-.7-34.6l21.9-21.9a24 24 0 0 1 33.9-.1z"
+                class="fa-primary"
+              ></path>
+            </g>
+          </svg>
+          <p class="text-lg tracking-wide">Logout</p>
+        </div></router-link
+      >
     </div>
   </div>
 </template>
