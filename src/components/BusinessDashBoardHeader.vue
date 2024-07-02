@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between bg-[#ffffff] px-10 py-8 shadow-lg shadow-[#edeef6]"
+    class="sticky top-0 flex justify-between bg-[#ffffff] px-10 py-8 shadow-lg shadow-[#edeef6]"
   >
     <h1 class="text-3xl font-normal">{{ Heading }}</h1>
     <div class="flex gap-3 border-l-2 border-[#c9cad1] py-1 pl-3">

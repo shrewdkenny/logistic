@@ -1,28 +1,25 @@
 <template>
-  <div class="flex w-full">
+  <div class="flex h-screen w-full">
     <div class="lg:w-[18%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
     <div class="flex w-full flex-col lg:w-[90%]">
       <div>
-        <BusinessDashBoardHeader Heading="Welcome" />
+        <BusinessDashBoardHeader Heading="Pending Orders" />
       </div>
-      <div class="h-full bg-[#eef0f8]">
-        <DashBoardCards />
-      </div>
+      <div class="h-full bg-[#eef0f8] p-4">You have no order history.</div>
     </div>
   </div>
 </template>
 <script>
 import BusinessDashBoardAside from "@/components/BusinessDashBoardAside.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
-import DashBoardCards from "@/components/DashBoardCards.vue";
+
 export default {
   name: "Test",
   components: {
     BusinessDashBoardAside,
     BusinessDashBoardHeader,
-    DashBoardCards,
   },
 };
 </script>

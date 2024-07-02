@@ -7,6 +7,9 @@ import BusinessDeliveriesSignUp from "@/views/BusinessDeliveriesSignUp.vue";
 import BusinessDeliveriesLogin from "@/views/BusinessDeliveriesLogin.vue";
 import DashBoard from "@/views/DashBoard.vue";
 import NewDispatch from "@/views/NewDispatch.vue";
+import PendingOrders from "@/views/PendingOrders.vue";
+import OrderHistory from "@/views/OrderHistory.vue";
+import FundWallet from "@/views/FundWallet.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +53,21 @@ const router = createRouter({
       path: "/new-dispatch",
       name: "new-dispatch",
       component: NewDispatch,
+    },
+    {
+      path: "/pending-orders",
+      name: "pending-orders",
+      component: PendingOrders,
+    },
+    {
+      path: "/order-history",
+      name: "order-history",
+      component: OrderHistory,
+    },
+    {
+      path: "/fund-wallet",
+      name: "fund-wallet",
+      component: FundWallet,
     },
   ],
 });
