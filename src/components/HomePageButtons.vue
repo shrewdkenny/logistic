@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-36 flex cursor-pointer flex-col items-center justify-center gap-2 lg:mt-48 lg:flex-row lg:gap-5"
+    class="mt-20 flex cursor-pointer flex-col items-center justify-center gap-2 lg:mt-48 lg:flex-row lg:gap-5"
   >
     <router-link to="/personalDeliveries">
       <Button

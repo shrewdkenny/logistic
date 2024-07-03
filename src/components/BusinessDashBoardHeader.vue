@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex items-center justify-between bg-[#ffffff] px-3 py-5 shadow-lg shadow-[#edeef6] lg:hidden"
+    class="flex items-center justify-between bg-[#ffffff] px-3 lg:py-5 py-3 shadow-lg shadow-[#edeef6] lg:hidden"
   >
     <router-link to="/">
-      <img src="@/assets/images/greensexlogo.svg" alt="" class="w-1/2"
+      <img src="@/assets/images/greensexlogo.svg" alt="" class="w-1/2 h-16"
     /></router-link>
 
-    <div class="w-1/2">
+    <div class="lg:w-1/2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

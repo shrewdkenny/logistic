@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-10 flex w-full flex-col rounded-xl px-4 lg:p-10 lg:shadow-md lg:shadow-[#40bd57]"
+    class="mt-10 flex w-full flex-col rounded-xl px-4 lg:p-10 lg:shadow-[0_0_15px_#40bd57]"
   >
     <div class="flex flex-col gap-10 lg:flex-row">
       <div class="flex flex-col gap-5 lg:w-1/2">
