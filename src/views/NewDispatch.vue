@@ -4,7 +4,7 @@
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
 
-    <div class="flex w-full flex-col lg:w-4/5">
+    <div class="flex w-full flex-col  lg:w-4/5">
       <div>
         <BusinessDashBoardHeader Heading="New Dispatch" />
       </div>

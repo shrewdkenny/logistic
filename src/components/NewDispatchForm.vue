@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 flex w-full flex-col rounded-xl bg-[#ffffff] px-20">
+  <div class="mt-5 flex w-full flex-col rounded-xl bg-[#ffffff] px-5 lg:px-20">
     <div class="mt-5 flex flex-col gap-10 lg:flex-row">
       <div class="flex flex-col gap-5 lg:w-1/2">
         <div>
