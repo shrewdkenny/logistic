@@ -1,8 +1,8 @@
 <template>
   <div
-    class="grid cursor-pointer grid-cols-1 gap-2 px-3 lg:grid-cols-2 lg:px-28"
+    class="grid mt-5 cursor-pointer grid-cols-1 gap-2 px-3 lg:grid-cols-2 lg:px-28"
   >
-    <div class="mt-2 flex justify-end gap-1 items-center text-[#8f8f8f]">
+    <div class="mt-2 lg:hidden flex justify-end gap-1 items-center text-[#8f8f8f]">
       <div>
         <svg
           aria-hidden="true"
