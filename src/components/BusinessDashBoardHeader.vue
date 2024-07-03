@@ -6,7 +6,7 @@
       <img src="@/assets/images/greensexlogo.svg" alt="" class="w-1/2 h-16"
     /></router-link>
 
-    <div class="lg:w-1/2">
+    <div class="lg:w-1/2" >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -23,6 +23,8 @@
       </svg>
     </div>
   </div>
+
+
   <div
     class="sticky top-0 hidden justify-between bg-[#ffffff] px-10 py-8 shadow-lg shadow-[#edeef6] lg:flex"
   >
