@@ -5,7 +5,7 @@
     <router-link to="/personalDeliveries">
       <Button
         variant="outline"
-        class="bg-[#66cc66] px-24 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black lg:px-20"
+        class="bg-[#66cc66] px-28 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black lg:px-20"
         >Personal Deliveries</Button
       >
     </router-link>
@@ -13,7 +13,7 @@
     <router-link to="/businessDeliveriesSignUp">
       <Button
         variant="outline"
-        class="border border-black px-24 py-6 hover:border-[#66cc66] hover:text-[#66cc66] lg:px-20"
+        class="border border-black px-28 py-6 hover:border-[#66cc66] hover:text-[#66cc66] lg:px-20"
         >Business Deliveries</Button
       ></router-link
     >
