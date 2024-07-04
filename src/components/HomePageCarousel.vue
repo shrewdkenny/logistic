@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="mt-5 flex cursor-pointer flex-col items-center"
-   
-  >
-    <img :src="slider[currentIndex].picture" class="h-60"/>
+  <div class="mt-5 flex cursor-pointer flex-col items-center">
+    <img :src="slider[currentIndex].picture" class="h-60" />
     <h1 class="mt-5 text-2xl tracking-wider">
       {{ slider[currentIndex].headline }}
     </h1>

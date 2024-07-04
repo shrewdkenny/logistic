@@ -4,12 +4,15 @@
       <BusinessDashBoardAside class="" />
     </div>
 
-    <AsideSmallScreen />
+    <div class="fixed z-50 flex cursor-pointer lg:hidden ">
+      <AsideSmallScreen />
+    </div>
 
     <div class="flex w-full flex-col lg:w-[90%]">
       <div>
         <BusinessDashBoardHeader Heading="Welcome" />
       </div>
+
       <div class="bg-[#eef0f8]">
         <DashBoardCards />
       </div>

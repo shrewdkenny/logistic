@@ -3,7 +3,9 @@
     <div class="lg:w-[20%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
-
+    <div class="fixed z-10 flex cursor-pointer lg:hidden">
+      <AsideSmallScreen />
+    </div>
     <div class="w-full lg:w-4/5">
       <div>
         <BusinessDashBoardHeader Heading="Fund Wallet" />
@@ -37,7 +39,7 @@
           </svg>
           <h1>Fund Wallet</h1>
         </div>
-        <div class="flex flex-col rounded-xl bg-[#ffffff] p-5 mt-3">
+        <div class="mt-3 flex flex-col rounded-xl bg-[#ffffff] p-5">
           <div class="lg:w-[30%]">
             <div
               class="flex w-[100%] flex-col rounded-xl bg-[#022045] px-5 py-3 text-[#ffffff]"
@@ -100,6 +102,7 @@
 </template>
 <script>
 import BusinessDashBoardAside from "@/components/BusinessDashBoardAside.vue";
+import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import DashBoardCards from "@/components/DashBoardCards.vue";
 import Input from "@/components/ui/input/Input.vue";
@@ -113,6 +116,7 @@ export default {
     DashBoardCards,
     Input,
     Button,
+    AsideSmallScreen,
   },
 };
 </script>

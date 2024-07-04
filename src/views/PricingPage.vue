@@ -27,7 +27,7 @@ import PricingTable from "@/components/PricingTable.vue";
 import PricingAddressInputs from "@/components/PricingAddressInputs.vue";
 import { Button } from "@/components/ui/button";
 import { onMounted } from "vue";
-import Aos from "aos";
+import AOS from "aos";
 import "aos/dist/aos.css";
 export default {
   name: "Test",
@@ -39,7 +39,7 @@ export default {
   },
   setup() {
     onMounted(() => {
-      Aos.init();
+      AOS.init();
     });
   },
 };

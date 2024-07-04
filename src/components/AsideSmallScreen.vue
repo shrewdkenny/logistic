@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex h-[100%] cursor-pointer flex-col bg-[#022045] lg:hidden"
+    class="h-[100%] cursor-pointer flex-col bg-[#022045] duration-300 ease-in"
     v-if="asideStore.isAsideVisible"
   >
     <router-link to="/">

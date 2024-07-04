@@ -14,16 +14,12 @@
 </template>
 
 <script>
-import { useStore } from "@/stores/store";
-import { computed } from "vue";
 import AsideLinks from "@/components/AsideLinks.vue";
 export default {
   name: "Test",
   components: {
     AsideLinks,
   },
-
- 
 };
 </script>
 

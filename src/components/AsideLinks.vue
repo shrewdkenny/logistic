@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col" >
+  <div class="flex flex-col">
     <div class="flex flex-col border-b py-5 text-[#b3b7c0]">
       <router-link to="/dashboard">
         <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
@@ -266,9 +266,7 @@
 </template>
 
 <script>
-
 export default {
   name: "Test",
- 
 };
 </script>

@@ -3,7 +3,9 @@
     <div class="lg:w-[20%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
-    <AsideSmallScreen />
+    <div class="fixed z-10 flex cursor-pointer lg:hidden">
+      <AsideSmallScreen />
+    </div>
     <div class="flex w-full flex-col lg:w-4/5">
       <div>
         <BusinessDashBoardHeader Heading="New Dispatch" />

@@ -1,12 +1,14 @@
 <template>
-  <div class="flex  h-screen">
+  <div class="flex h-screen">
     <div class="lg:w-[20%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
-
+    <div class="fixed z-10 flex cursor-pointer lg:hidden">
+      <AsideSmallScreen />
+    </div>
     <div class="w-full lg:w-4/5">
       <div>
-        <BusinessDashBoardHeader Heading="About"/>
+        <BusinessDashBoardHeader Heading="About" />
       </div>
       <div class="flex flex-col bg-[#edeef7] p-5">
         <div
@@ -37,7 +39,7 @@
           </svg>
           <h1>About</h1>
         </div>
-        <div class="flex flex-col rounded-xl bg-[#ffffff] p-6 mt-2">
+        <div class="mt-2 flex flex-col rounded-xl bg-[#ffffff] p-6">
           <h1 class="text-lg">We are Greensex!</h1>
           <p class="mt-10 text-sm font-thin leading-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
@@ -71,6 +73,7 @@
 </template>
 <script>
 import BusinessDashBoardAside from "@/components/BusinessDashBoardAside.vue";
+import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import DashBoardCards from "@/components/DashBoardCards.vue";
 import Input from "@/components/ui/input/Input.vue";
@@ -80,6 +83,7 @@ export default {
   name: "Test",
   components: {
     BusinessDashBoardAside,
+    AsideSmallScreen,
     BusinessDashBoardHeader,
     DashBoardCards,
     Input,

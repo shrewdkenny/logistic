@@ -3,13 +3,15 @@
     <div class="lg:w-[20%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
-
+    <div class="fixed z-50 flex cursor-pointer lg:hidden">
+      <AsideSmallScreen />
+    </div>
     <div class="w-full lg:w-4/5">
       <div>
         <BusinessDashBoardHeader Heading="Support" />
       </div>
 
-      <div class="flex w-full flex-col justify-center bg-[#edeef7] p-4 ">
+      <div class="flex w-full flex-col justify-center bg-[#edeef7] p-4">
         <div
           class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
         >
@@ -79,6 +81,7 @@
 </template>
 <script>
 import BusinessDashBoardAside from "@/components/BusinessDashBoardAside.vue";
+import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import Input from "@/components/ui/input/Input.vue";
 import { Button } from "@/components/ui/button";
@@ -88,6 +91,7 @@ export default {
   name: "Test",
   components: {
     BusinessDashBoardAside,
+    AsideSmallScreen,
     BusinessDashBoardHeader,
     Input,
     Button,

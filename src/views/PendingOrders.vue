@@ -3,6 +3,9 @@
     <div class="lg:w-[18%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
+    <div class="fixed z-10 flex cursor-pointer lg:hidden">
+      <AsideSmallScreen />
+    </div>
     <div class="flex w-full flex-col lg:w-[90%]">
       <div>
         <BusinessDashBoardHeader Heading="Pending Orders" />
@@ -44,12 +47,14 @@
 <script>
 import BusinessDashBoardAside from "@/components/BusinessDashBoardAside.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
+import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
 
 export default {
   name: "Test",
   components: {
     BusinessDashBoardAside,
     BusinessDashBoardHeader,
+    AsideSmallScreen,
   },
 };
 </script>
