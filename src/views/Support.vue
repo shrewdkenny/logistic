@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-fit">
+  <div class="flex h-screen">
     <div class="lg:w-[20%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
@@ -9,7 +9,7 @@
         <BusinessDashBoardHeader Heading="Support" />
       </div>
 
-      <div class="flex w-full flex-col justify-center bg-[#edeef7] p-4">
+      <div class="flex w-full flex-col justify-center bg-[#edeef7] p-4 ">
         <div
           class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
         >

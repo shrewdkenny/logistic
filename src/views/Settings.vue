@@ -1,12 +1,12 @@
 <template>
-  <div class="flex h-fit">
+  <div class="flex h-screen">
     <div class="lg:w-[20%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
 
     <div class="w-full lg:w-4/5">
       <div>
-        <BusinessDashBoardHeader Heading="Support" />
+        <BusinessDashBoardHeader Heading="Settings" />
       </div>
       <div class="flex w-full flex-col justify-center bg-[#edeef7] p-5">
         <div

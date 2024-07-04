@@ -1,5 +1,8 @@
 <template>
-  <div class="flex h-[100%] cursor-pointer flex-col bg-[#022045]">
+  <div
+    class="flex h-[100%] cursor-pointer flex-col bg-[#022045] lg:hidden"
+    v-if="asideStore.isAsideVisible"
+  >
     <router-link to="/">
       <div class="px-10">
         <img
@@ -15,7 +18,6 @@
 
 <script>
 import { useStore } from "@/stores/store";
-import { computed } from "vue";
 import AsideLinks from "@/components/AsideLinks.vue";
 export default {
   name: "Test",
@@ -23,7 +25,13 @@ export default {
     AsideLinks,
   },
 
- 
+  setup() {
+    const asideStore = useStore();
+
+    return {
+      asideStore,
+    };
+  },
 };
 </script>
 

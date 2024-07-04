@@ -3,16 +3,16 @@
     <div class="lg:w-[20%]">
       <BusinessDashBoardAside class="hidden lg:flex" />
     </div>
-
+    <AsideSmallScreen />
     <div class="flex w-full flex-col lg:w-4/5">
       <div>
         <BusinessDashBoardHeader Heading="New Dispatch" />
       </div>
-      <div class="flex flex-col bg-[#eef0f8] px-5">
+      <div class="flex h-[100%] flex-col bg-[#eef0f8] px-5">
         <div
-          class=" mt-2 flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
+          class="mt-2 flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
         >
-        <svg
+          <svg
             aria-hidden="true"
             focusable="false"
             data-prefix="fad"
@@ -44,6 +44,7 @@
 </template>
 <script>
 import BusinessDashBoardAside from "@/components/BusinessDashBoardAside.vue";
+import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import DashBoardCards from "@/components/DashBoardCards.vue";
 import NewDispatchForm from "@/components/NewDispatchForm.vue";
@@ -54,6 +55,7 @@ export default {
     BusinessDashBoardHeader,
     DashBoardCards,
     NewDispatchForm,
+    AsideSmallScreen,
   },
 };
 </script>

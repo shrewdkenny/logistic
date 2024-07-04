@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex items-center justify-between bg-[#ffffff] px-3 lg:py-5 py-3 shadow-lg shadow-[#edeef6] lg:hidden"
+    class="flex items-center justify-between bg-[#ffffff] px-3 py-3 shadow-lg shadow-[#edeef6] lg:hidden lg:py-5"
   >
     <router-link to="/">
-      <img src="@/assets/images/greensexlogo.svg" alt="" class="w-1/2 h-16"
+      <img src="@/assets/images/greensexlogo.svg" alt="" class="h-16 w-1/2"
     /></router-link>
 
-    <div class="lg:w-1/2" >
+    <div class="lg:w-1/2" @click="handleToggleAside">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -24,11 +24,12 @@
     </div>
   </div>
 
-
   <div
     class="sticky top-0 hidden justify-between bg-[#ffffff] px-10 py-8 shadow-lg shadow-[#edeef6] lg:flex"
   >
-    <h1 class="text-3xl font-normal">{{ Heading }}</h1>
+    <h1 class="text-3xl font-normal">
+      {{ Heading }}
+    </h1>
     <div class="flex gap-3 border-l-2 border-[#c9cad1] py-1 pl-3">
       <h1 class="text-[#b5b5c3]">
         Hi, <span class="text-[#7e8299]">Azeez Kehinde</span>
@@ -38,12 +39,23 @@
 </template>
 
 <script>
+import { useStore } from "@/stores/store";
 export default {
   name: "Test",
   props: {
     Heading: String,
   },
+
+  setup() {
+    const asideStore = useStore();
+    const handleToggleAside = () => {
+      asideStore.toogleAside();
+    };
+
+    return {
+      asideStore,
+      handleToggleAside,
+    };
+  },
 };
 </script>
-
-<style lang="scss" scoped></style>

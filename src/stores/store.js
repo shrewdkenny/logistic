@@ -1,12 +1,12 @@
-import { ref } from "vue";
 import { defineStore } from "pinia";
 
-export const useStore = defineStore("store", () => {
-  const isAsideVisible = ref(false);
-
-  const toggleAsideVisibility = () => {
-    isAsideVisible.value = !isAsideVisible.value;
-  };
-
-  return { isAsideVisible, toggleAsideVisibility };
+export const useStore = defineStore("Menu", {
+  state: () => ({
+    isAsideVisible: false,
+  }),
+  actions: {
+    toogleAside() {
+      this.isAsideVisible = !this.isAsideVisible;
+    },
+  },
 });
