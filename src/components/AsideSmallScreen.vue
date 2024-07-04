@@ -1,14 +1,14 @@
 <template>
   <div
-    class="cursor-pointer flex-col bg-[#022045] duration-300 ease-in"
+    class="cursor-pointer flex-col bg-[#022045] duration-300 ease-in pt-10 w-64"
     v-if="asideStore.isAsideVisible"
   >
     <router-link to="/">
-      <div class="px-10">
+      <div class="flex justify-center">
         <img
           src="@/assets/images/greensexlogo2.svg"
           alt=""
-          class="mt-10 w-[150px]"
+          class="w-40"
         />
       </div>
     </router-link>

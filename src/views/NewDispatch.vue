@@ -1,16 +1,16 @@
 <template>
-  <div class="flex h-screen w-full">
-    <div class="lg:w-[20%]">
-      <BusinessDashBoardAside class="hidden lg:flex" />
+  <div class="flex h-dvh w-full">
+    <div class="hidden h-full lg:flex lg:w-[18%]">
+      <BusinessDashBoardAside />
     </div>
-    <div class="fixed z-10 flex cursor-pointer lg:hidden">
+    <div class="fixed z-50 flex cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
-    <div class="flex w-full flex-col lg:w-4/5">
+    <div class="flex w-full flex-col">
       <div>
         <BusinessDashBoardHeader Heading="New Dispatch" />
       </div>
-      <div class="flex h-[100%] flex-col bg-[#eef0f8] px-5">
+      <div class="h-fit bg-[#eef0f8] pb-10 px-3">
         <div
           class="mt-2 flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
         >

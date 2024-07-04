@@ -1,16 +1,17 @@
 <template>
-  <div class="flex h-screen">
-    <div class="lg:w-[20%]">
-      <BusinessDashBoardAside class="hidden lg:flex" />
+  <div class="flex h-dvh w-full ">
+    <div class="hidden h-full lg:flex lg:w-[18%]">
+      <BusinessDashBoardAside />
     </div>
     <div class="fixed z-10 flex cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
-    <div class="w-full lg:w-4/5">
+
+    <div class="flex w-full flex-col">
       <div>
         <BusinessDashBoardHeader Heading="About" />
       </div>
-      <div class="flex flex-col bg-[#edeef7] p-5">
+      <div class="flex lg:h-full flex-col bg-[#edeef7] p-5">
         <div
           class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
         >

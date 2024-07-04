@@ -1,5 +1,7 @@
 <template>
-  <div class="mt-5 flex w-full flex-col rounded-xl bg-[#ffffff] px-5 lg:px-20">
+  <div
+    class="mt-5 flex w-full flex-col rounded-xl bg-[#ffffff] px-5 pb-5 lg:px-20"
+  >
     <div class="mt-5 flex flex-col gap-10 lg:flex-row">
       <div class="flex flex-col gap-5 lg:w-1/2">
         <div>
@@ -84,7 +86,6 @@
 </template>
 
 <script>
-
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";

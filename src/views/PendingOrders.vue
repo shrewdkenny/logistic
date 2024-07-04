@@ -1,12 +1,12 @@
 <template>
-  <div class="flex h-screen w-full">
-    <div class="lg:w-[18%]">
-      <BusinessDashBoardAside class="hidden lg:flex" />
+  <div class="flex h-dvh w-full">
+    <div class="hidden h-full lg:flex lg:w-[18%]">
+      <BusinessDashBoardAside />
     </div>
-    <div class="fixed z-10 flex cursor-pointer lg:hidden">
+    <div class="fixed z-50 flex cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
-    <div class="flex w-full flex-col lg:w-[90%]">
+    <div class="flex w-full flex-col">
       <div>
         <BusinessDashBoardHeader Heading="Pending Orders" />
       </div>
