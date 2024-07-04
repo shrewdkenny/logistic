@@ -8,5 +8,9 @@ export const useStore = defineStore("Menu", {
     toogleAside() {
       this.isAsideVisible = !this.isAsideVisible;
     },
+
+    closeAside() {
+      this.isAsideVisible = false;
+    },
   },
 });

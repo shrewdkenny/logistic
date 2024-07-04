@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[100%] cursor-pointer flex-col bg-[#022045] duration-300 ease-in"
+    class="cursor-pointer flex-col bg-[#022045] duration-300 ease-in"
     v-if="asideStore.isAsideVisible"
   >
     <router-link to="/">
@@ -12,7 +12,7 @@
         />
       </div>
     </router-link>
-    <AsideLinks />
+    <AsideLinks @click="handleCloseAside" />
   </div>
 </template>
 
@@ -27,9 +27,12 @@ export default {
 
   setup() {
     const asideStore = useStore();
-
+    const handleCloseAside = () => {
+      asideStore.closeAside();
+    };
     return {
       asideStore,
+      handleCloseAside,
     };
   },
 };
