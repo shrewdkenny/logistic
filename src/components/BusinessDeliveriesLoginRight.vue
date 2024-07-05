@@ -8,6 +8,7 @@
     </p>
     <router-link to="/dashBoard">
       <Button
+        @click="loginUser"
         variant="outline"
         class="mt-8 w-[100%] bg-[#66cc66] py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
         >Login</Button
@@ -26,11 +27,45 @@
 <script>
 import BusinessDeliverySignUpInput from "@/components/BusinessDeliverySignUpInput.vue";
 import { Button } from "@/components/ui/button";
+import { ref } from "vue";
 export default {
   name: "Test",
   components: {
     BusinessDeliverySignUpInput,
     Button,
+  },
+
+  setup() {
+    const email = ref("");
+    const password = ref("");
+    const loginUser = async () => {
+      const userData = {
+        email: email.value,
+        password: password.value,
+      };
+
+      try {
+        const response = await fetch("", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: JSON.stringify(userData),
+        });
+
+        if (response.ok) {
+          return console.log("login successful");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    return {
+      email,
+      password,
+      loginUser,
+    };
   },
 };
 </script>

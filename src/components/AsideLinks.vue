@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col">
     <div class="flex flex-col border-b py-5 text-[#b3b7c0]">
-      <router-link to="/dashboard">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+      <router-link to="/dashboard" active-class="active-link">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -30,8 +30,8 @@
         </div></router-link
       >
 
-      <router-link to="/new-dispatch">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+      <router-link to="/new-dispatch" active-class="active-link">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -60,8 +60,8 @@
         </div></router-link
       >
 
-      <router-link to="pending-orders">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+      <router-link to="pending-orders" active-class="active-link">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -89,8 +89,8 @@
           <p class="text-lg tracking-wide">Pending Orders</p>
         </div></router-link
       >
-      <router-link to="/order-history">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+      <router-link to="/order-history" active-class="active-link">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -117,8 +117,8 @@
           <p class="text-lg tracking-wide">Order History</p>
         </div></router-link
       >
-      <router-link to="/fund-wallet">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+      <router-link to="/fund-wallet" active-class="active-link">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -146,8 +146,8 @@
           <p class="text-lg tracking-wide">Fund Wallet</p>
         </div></router-link
       >
-      <router-link to="/about">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+      <router-link to="/about" active-class="active-link">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -177,8 +177,8 @@
     </div>
 
     <div class="gap-2 py-7 text-[#b3b7c0]">
-      <router-link to="/support">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+      <router-link to="/support" active-class="active-link">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -202,11 +202,13 @@
               ></path>
             </g>
           </svg>
-          <p class="text-lg tracking-wide">Support</p>
+          <p class="text-lg tracking-wide" active-class="active-link">
+            Support
+          </p>
         </div></router-link
       >
       <router-link to="/settings">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -230,11 +232,13 @@
               ></path>
             </g>
           </svg>
-          <p class="text-lg tracking-wide">Settings</p>
+          <p class="text-lg tracking-wide" active-class="active-link">
+            Settings
+          </p>
         </div></router-link
       >
       <router-link to="/">
-        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#122c50]">
+        <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -270,3 +274,8 @@ export default {
   name: "Test",
 };
 </script>
+<style>
+.active-link {
+  background-color: #122c50;
+}
+</style>
