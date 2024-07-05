@@ -9,7 +9,7 @@
     <div
       @click="handleCloseAside"
       v-if="asideStore.isAsideVisible"
-      class="fixed inset-0 z-10 h-full cursor-pointer bg-black bg-opacity-35"
+      class="fixed inset-0 z-10  cursor-pointer bg-black bg-opacity-35"
     ></div>
     <div class="flex w-full flex-col">
       <div>

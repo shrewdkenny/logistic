@@ -3,7 +3,7 @@
     <div class="hidden h-full lg:flex lg:w-[18%]">
       <BusinessDashBoardAside />
     </div>
-    <div class="fixed z-50 flex cursor-pointer lg:hidden">
+    <div class="fixed z-50 flex cursor-pointer lg:hidden h-full">
       <AsideSmallScreen />
     </div>
 
