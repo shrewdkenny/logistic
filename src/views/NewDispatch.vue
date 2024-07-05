@@ -6,11 +6,16 @@
     <div class="fixed z-50 flex cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
+    <div
+      @click="handleCloseAside"
+      v-if="asideStore.isAsideVisible"
+      class="fixed inset-0 z-10 h-full cursor-pointer bg-black bg-opacity-35"
+    ></div>
     <div class="flex w-full flex-col">
       <div>
         <BusinessDashBoardHeader Heading="New Dispatch" />
       </div>
-      <div class="h-fit bg-[#eef0f8] pb-10 px-3">
+      <div class="h-fit bg-[#eef0f8] px-3 pb-10">
         <div
           class="mt-2 flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
         >
@@ -50,6 +55,7 @@ import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import DashBoardCards from "@/components/DashBoardCards.vue";
 import NewDispatchForm from "@/components/NewDispatchForm.vue";
+import { useStore } from "@/stores/store";
 export default {
   name: "Test",
   components: {
@@ -58,6 +64,18 @@ export default {
     DashBoardCards,
     NewDispatchForm,
     AsideSmallScreen,
+  },
+
+  setup() {
+    const asideStore = useStore();
+    const handleCloseAside = () => {
+      asideStore.closeAside();
+    };
+
+    return {
+      asideStore,
+      handleCloseAside,
+    };
   },
 };
 </script>

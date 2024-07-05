@@ -7,6 +7,8 @@
     leave-from-class="translate-x-0"
     leave-to-class="-translate-x-full"
   >
+
+  
     <div
       v-if="asideStore.isAsideVisible"
       class="w-64 cursor-pointer flex-col bg-[#022045] pt-10"

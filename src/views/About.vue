@@ -1,17 +1,21 @@
 <template>
-  <div class="flex h-dvh w-full ">
+  <div class="flex h-dvh w-full">
     <div class="hidden h-full lg:flex lg:w-[18%]">
       <BusinessDashBoardAside />
     </div>
-    <div class="fixed z-10 flex cursor-pointer lg:hidden">
+    <div class="fixed z-50 h-full cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
-
+    <div
+      @click="handleCloseAside"
+      v-if="asideStore.isAsideVisible"
+      class="fixed inset-0 z-10 h-full cursor-pointer bg-black bg-opacity-35"
+    ></div>
     <div class="flex w-full flex-col">
       <div>
         <BusinessDashBoardHeader Heading="About" />
       </div>
-      <div class="flex lg:h-full flex-col bg-[#edeef7] p-5">
+      <div class="flex flex-col bg-[#edeef7] p-5 lg:h-full">
         <div
           class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
         >
@@ -79,6 +83,7 @@ import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import DashBoardCards from "@/components/DashBoardCards.vue";
 import Input from "@/components/ui/input/Input.vue";
 import { Button } from "@/components/ui/button";
+import { useStore } from "@/stores/store";
 
 export default {
   name: "Test",
@@ -89,6 +94,18 @@ export default {
     DashBoardCards,
     Input,
     Button,
+  },
+
+  setup() {
+    const asideStore = useStore();
+    const handleCloseAside = () => {
+      asideStore.closeAside();
+    };
+
+    return {
+      asideStore,
+      handleCloseAside,
+    };
   },
 };
 </script>

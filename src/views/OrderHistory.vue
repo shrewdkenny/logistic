@@ -6,10 +6,18 @@
     <div class="fixed z-50 flex cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
+
+    <div
+      @click="handleCloseAside"
+      v-if="asideStore.isAsideVisible"
+      class="fixed inset-0 z-10 h-full cursor-pointer bg-black bg-opacity-35"
+    ></div>
+
     <div class="flex w-full flex-col">
       <div>
         <BusinessDashBoardHeader Heading="Order History" />
       </div>
+
       <div class="flex h-full flex-col bg-[#eef0f8] p-4">
         <div
           class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
@@ -39,7 +47,8 @@
           </svg>
           <h1>Order History</h1>
         </div>
-        You have no order history.
+
+        <div>You have no order history.</div>
       </div>
     </div>
   </div>
@@ -48,12 +57,26 @@
 import BusinessDashBoardAside from "@/components/BusinessDashBoardAside.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
+import { useStore } from "@/stores/store";
+
 export default {
   name: "Test",
   components: {
     BusinessDashBoardAside,
     BusinessDashBoardHeader,
     AsideSmallScreen,
+  },
+
+  setup() {
+    const asideStore = useStore();
+    const handleCloseAside = () => {
+      asideStore.closeAside();
+    };
+
+    return {
+      asideStore,
+      handleCloseAside,
+    };
   },
 };
 </script>

@@ -6,6 +6,13 @@
     <div class="fixed z-50 flex cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
+
+    <div
+      @click="handleCloseAside"
+      v-if="asideStore.isAsideVisible"
+      class="fixed inset-0 z-10 h-full cursor-pointer bg-black bg-opacity-35"
+    ></div>
+
     <div class="flex w-full flex-col">
       <div>
         <BusinessDashBoardHeader Heading="Support" />
@@ -86,6 +93,7 @@ import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import Input from "@/components/ui/input/Input.vue";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { useStore } from "@/stores/store";
 
 export default {
   name: "Test",
@@ -96,6 +104,18 @@ export default {
     Input,
     Button,
     Textarea,
+  },
+
+  setup() {
+    const asideStore = useStore();
+    const handleCloseAside = () => {
+      asideStore.closeAside();
+    };
+
+    return {
+      asideStore,
+      handleCloseAside,
+    };
   },
 };
 </script>
