@@ -13,6 +13,7 @@ import FundWallet from "@/views/FundWallet.vue";
 import About from "@/views/About.vue";
 import Support from "@/views/Support.vue";
 import Settings from "@/views/Settings.vue";
+import VerifySignUp from "@/views/VerifySignUp.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,10 +44,16 @@ const router = createRouter({
       component: BusinessDeliveriesSignUp,
     },
     {
+      path: "/verify-signup",
+      name: "verify-signup",
+      component: VerifySignUp,
+    },
+    {
       path: "/businessDeliveriesLogin",
       name: "businessDeliveriesLogin",
       component: BusinessDeliveriesLogin,
     },
+
     {
       path: "/dashboard",
       name: "dashboard",
@@ -87,7 +94,6 @@ const router = createRouter({
       name: "settings",
       component: Settings,
     },
-
   ],
 });
 
