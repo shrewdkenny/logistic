@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid cursor-pointer grid-cols-1 gap-2 px-3 py-2 lg:grid-cols-2 lg:px-28 lg:py-5"
+    class="grid cursor-pointer grid-cols-1 gap-4 px-3 py-2 lg:grid-cols-2 lg:px-28 lg:py-5"
   >
     <div class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden">
       <div>
@@ -32,7 +32,7 @@
     </div>
     <router-link to="/new-dispatch">
       <div
-        class="flex flex-col items-center justify-center rounded-lg bg-[#ffffff] py-7 lg:h-40 lg:py-0"
+        class="flex flex-col items-center justify-center rounded-lg bg-[#ffffff] py-7 hover:scale-105 hover:bg-[#fafafa] hover:transition-transform hover:duration-300 hover:ease-in-out lg:h-40 lg:py-0"
       >
         <h1 class="text-lg font-normal text-[#545c63]">create new dispatch</h1>
         <svg
@@ -62,7 +62,7 @@
 
     <router-link to="/pending-orders">
       <div
-        class="flex py-7 lg:h-40 lg:py-0 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
+        class="flex flex-col items-center justify-center rounded-lg bg-[#ffffff] py-7 hover:scale-105 hover:bg-[#fafafa] hover:transition-transform hover:duration-300 hover:ease-in-out lg:h-40 lg:py-0"
       >
         <h1 class="text-lg font-normal text-[#545c63]">View pending orders</h1>
         <svg
@@ -92,7 +92,7 @@
 
     <router-link to="/order-history">
       <div
-        class="flex py-7 lg:h-40 lg:py-0 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
+        class="flex flex-col items-center justify-center rounded-lg bg-[#ffffff] py-7 hover:scale-105 hover:bg-[#fafafa] hover:transition-transform hover:duration-300 hover:ease-in-out lg:h-40 lg:py-0"
       >
         <h1 class="text-lg font-normal text-[#545c63]">View Order History</h1>
         <svg
@@ -122,7 +122,7 @@
 
     <router-link to="/fund-wallet">
       <div
-        class="flex h-40 flex-col items-center justify-center rounded-lg bg-[#ffffff]"
+        class="flex h-40 flex-col items-center justify-center rounded-lg bg-[#ffffff] hover:scale-105 hover:bg-[#fafafa] hover:transition-transform hover:duration-300 hover:ease-in-out"
       >
         <h1 class="text-lg font-normal text-[#545c63]">Fund Your Wallet</h1>
         <svg

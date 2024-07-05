@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col border-b py-5 text-[#b3b7c0]">
+    <div class="flex flex-col border-b py-5 text-[#dadce2]">
       <router-link to="/dashboard" active-class="active-link">
         <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
@@ -176,7 +176,7 @@
       >
     </div>
 
-    <div class="gap-2 py-7 text-[#b3b7c0]">
+    <div class="gap-2 py-7 text-[#dadce2]">
       <router-link to="/support" active-class="active-link">
         <div class="flex items-center gap-4 px-5 py-4 hover:bg-[#0a1a31]">
           <svg
