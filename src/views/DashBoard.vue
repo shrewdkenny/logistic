@@ -4,7 +4,7 @@
       <BusinessDashBoardAside />
     </div>
 
-    <div class="fixed z-50 flex cursor-pointer lg:hidden h-full">
+    <div class="fixed z-50 flex h-full cursor-pointer lg:hidden">
       <AsideSmallScreen />
     </div>
     <div

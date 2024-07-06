@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-between bg-[#ffffff] px-3 py-3 shadow-lg shadow-[#edeef6] lg:hidden lg:py-5"
+    class="flex items-center justify-between bg-[#ffffff] px-3 py-3  lg:hidden lg:py-5"
   >
     <router-link to="/">
       <img src="@/assets/images/greensexlogo.svg" alt="" class="h-16 w-1/2"
