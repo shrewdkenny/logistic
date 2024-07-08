@@ -164,10 +164,6 @@ export default {
         companyAddress: companyAddress.value,
         acceptTerms: acceptTerms.value,
       };
-
-      // Debugging the form data
-      console.log(userData);
-
       try {
         const response = await fetch(`${baseUrl}/api/auth/register`, {
           method: "POST",
