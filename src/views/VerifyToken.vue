@@ -37,43 +37,67 @@ export default {
         if (data.success) {
           Swal.fire({
             position: "center",
-            width: "60%",
-            color: "black",
+            color: "#66cc66",
             title:
-              "<p style='font-size: 20px; font-family: sans-serif;'>verification successful</p>",
+              "<p style='font-size: 25px; font-weight: 500; font-family: sans-serif;'>verification successful</p>",
             showConfirmButton: false,
-            timer: 500,
+            timer: 100,
+          }).then(() => {
+            router.push("/businessDeliveriesLogin");
           });
-          setTimeout(() => {
-            router.push("/dashboard");
-          }, 2000);
         } else {
           Swal.fire({
             position: "center",
-            width: "60%",
-            color: "black",
+            color: "red",
             title:
-              "<p style='font-size: 20px; font-family: sans-serif; text-align: center;'>verification failed. <br/> New verification sent</p>",
+              "<p style='font-size: 30px; font-weight: 500; font-family: sans-serif;'>Verification Failed.</p>",
             showConfirmButton: true,
-            // timer: 500,
+            customClass: {
+              confirmButton: "custom-confirm-button",
+            },
+            buttonsStyling: false,
+            html: `
+              <style>
+                .swal2-confirm.custom-confirm-button {
+                  border: none;
+                  padding: 10px 20px;
+                  background-color: #66cc66;
+                  color: white;
+                  border-radius: 5px;
+                  outline: none; 
+                }
+              </style>
+            `,
+          }).then(() => {
+            // router.push("/businessDeliveriesLogin");
           });
-          setTimeout(() => {
-            router.push("/businessDeliveriesLogin");
-          }, 2000);
         }
       } catch (error) {
         Swal.fire({
           position: "center",
-          width: "200px",
-          color: "black",
+          color: "red",
           title:
-            "<p style='font-size: 20px; font-family: sans-serif; text-align: center;'>verification failed. <br/> New verification sent</p>",
+            "<p style='font-size: 30px; font-weight: 500; font-family: sans-serif;'>Verification Failed.</p>",
           showConfirmButton: true,
-          // timer: 500,
+          customClass: {
+            confirmButton: "custom-confirm-button",
+          },
+          buttonsStyling: false,
+          html: `
+              <style>
+                .swal2-confirm.custom-confirm-button {
+                  border: none;
+                  padding: 10px 20px;
+                  background-color: #66cc66;
+                  color: white;
+                  border-radius: 5px;
+                  outline: none; 
+                }
+              </style>
+            `,
+        }).then(() => {
+          // router.push("/businessDeliveriesLogin");
         });
-        setTimeout(() => {
-          router.push("/businessDeliveriesLogin");
-        }, 2000);
       } finally {
         verifying.value = false;
       }
