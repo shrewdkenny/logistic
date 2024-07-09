@@ -2,34 +2,6 @@
   <div class="flex w-full flex-col lg:w-1/2">
     <h1 class="text-center text-3xl font-normal leading-9">Create Account</h1>
     <div class="flex flex-col gap-2">
-      <!-- <BusinessDeliverySignUpInput label="First Name" v-model="firstName" />
-      <BusinessDeliverySignUpInput label="Last Name" v-model="lastName" />
-      <BusinessDeliverySignUpInput
-        label="Phone Number"
-        type="number"
-        placeholder="+234"
-        v-model="phoneNumber"
-      />
-      <BusinessDeliverySignUpInput
-        label="Password"
-        type="password"
-        v-model="password"
-      />
-      <BusinessDeliverySignUpInput
-        label="Confirm Password"
-        type="password"
-        v-model="confirmPassword"
-      />
-      <BusinessDeliverySignUpInput
-        label="Corporate Email"
-        type="email"
-        v-model="email"
-      />
-      <BusinessDeliverySignUpInput
-        label="Company Address"
-        v-model="companyAddress"
-      /> -->
-
       <div class="relative mt-7 w-full">
         <input
           v-model="firstName"
@@ -135,6 +107,7 @@
 import BusinessDeliverySignUpInput from "@/components/BusinessDeliverySignUpInput.vue";
 import { Button } from "@/components/ui/button";
 import { ref } from "vue";
+import {  useRouter } from "vue-router";
 
 export default {
   name: "BusinessDeliveriesSignUp",
@@ -143,6 +116,7 @@ export default {
     Button,
   },
   setup() {
+    const router = useRouter();
     const baseUrl = import.meta.env.VITE_API_URL;
     const firstName = ref("");
     const lastName = ref("");
@@ -175,7 +149,7 @@ export default {
         });
 
         if (response.ok) {
-          console.log("Registration successful");
+          router.push("/verify-signup");
         } else {
           const errorData = await response.json();
           console.error("Registration failed:", errorData);
