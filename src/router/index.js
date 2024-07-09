@@ -14,6 +14,7 @@ import About from "@/views/About.vue";
 import Support from "@/views/Support.vue";
 import Settings from "@/views/Settings.vue";
 import VerifySignUp from "@/views/VerifySignUp.vue";
+import VerifyToken from "@/views/VerifyToken.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -93,6 +94,11 @@ const router = createRouter({
       path: "/settings",
       name: "settings",
       component: Settings,
+    },
+    {
+      path: "/verifyToken",
+      name: "verifyToken",
+      component: VerifyToken,
     },
   ],
 });

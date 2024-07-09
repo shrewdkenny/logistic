@@ -1,5 +1,5 @@
 <template>
-  <h1 v-if="verifying">loggin in....</h1>
+
   <div class="flex w-full flex-col lg:w-2/5">
     <h1 class="text-center text-3xl font-normal leading-9">Login</h1>
 
@@ -86,4 +86,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>

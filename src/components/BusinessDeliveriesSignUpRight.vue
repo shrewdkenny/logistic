@@ -87,12 +87,22 @@
         <p class="text-sm font-medium">Accept terms and conditions</p>
       </div>
       <Button
+        variant="outline"
+        v-if="registering"
+        class="mt-8 flex w-[100%] gap-5 bg-[#66cc66] py-6 text-[#ffffff]"
+      >
+        <img :src="loader" alt="" class="w-10" />
+        <p>creating account</p>
+      </Button>
+      <Button
+        v-else
         @click="registerUser"
         variant="outline"
-        class="mt-8 w-[100%] bg-[#66cc66] py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
+        class="mt-8 w-[100%] bg-[#66cc66] py-6 text-[#ffffff]"
       >
         Create Account
       </Button>
+
       <p class="mt-5 text-center text-sm font-normal">
         Already have an account?
         <router-link to="/businessDeliveriesLogin">
@@ -107,7 +117,8 @@
 import BusinessDeliverySignUpInput from "@/components/BusinessDeliverySignUpInput.vue";
 import { Button } from "@/components/ui/button";
 import { ref } from "vue";
-import {  useRouter } from "vue-router";
+import { useRouter } from "vue-router";
+import loader from "@/assets/images/loader.gif";
 
 export default {
   name: "BusinessDeliveriesSignUp",
@@ -126,6 +137,7 @@ export default {
     const email = ref("");
     const companyAddress = ref("");
     const acceptTerms = ref(false);
+    const registering = ref(false);
 
     const registerUser = async () => {
       const userData = {
@@ -139,6 +151,7 @@ export default {
         acceptTerms: acceptTerms.value,
       };
       try {
+        registering.value = true;
         const response = await fetch(`${baseUrl}/api/auth/register`, {
           method: "POST",
           headers: {
@@ -156,6 +169,8 @@ export default {
         }
       } catch (error) {
         console.error("Error during registration:", error);
+      } finally {
+        registering.value = false;
       }
     };
 
@@ -169,6 +184,8 @@ export default {
       companyAddress,
       acceptTerms,
       registerUser,
+      registering,
+      loader,
     };
   },
 };
