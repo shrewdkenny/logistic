@@ -16,10 +16,14 @@ export default {
     const router = useRouter();
     const route = useRoute();
     const verifying = ref(true);
+    const requestSent = ref(false);
     const baseUrl = import.meta.env.VITE_API_URL;
 
     const verifyToken = async () => {
+      if (requestSent.value) return;
+
       try {
+        requestSent.value = true;
         const token = route.query.verify_token;
 
         const response = await fetch(
@@ -33,19 +37,33 @@ export default {
           },
         );
         const data = await response.json();
-
-        if (data.success) {
+        if (data.message === "Email successfully verified") {
           Swal.fire({
             position: "center",
             color: "#66cc66",
             title:
-              "<p style='font-size: 25px; font-weight: 500; font-family: sans-serif;'>verification successful</p>",
-            showConfirmButton: false,
-            timer: 100,
+              "<p style='font-size: 30px; font-weight: 500; font-family: sans-serif;'>Verification successful.</p>",
+            showConfirmButton: true,
+            customClass: {
+              confirmButton: "custom-confirm-button",
+            },
+            buttonsStyling: false,
+            html: `
+              <style>
+                .swal2-confirm.custom-confirm-button {
+                  border: none;
+                  padding: 10px 20px;
+                  background-color: #66cc66;
+                  color: white;
+                  border-radius: 5px;
+                  outline: none; 
+                }
+              </style>
+            `,
           }).then(() => {
             router.push("/businessDeliveriesLogin");
           });
-        } else {
+        } else if (data.message === "Verification token is invalid") {
           Swal.fire({
             position: "center",
             color: "red",
@@ -68,8 +86,6 @@ export default {
                 }
               </style>
             `,
-          }).then(() => {
-            // router.push("/businessDeliveriesLogin");
           });
         }
       } catch (error) {
@@ -95,8 +111,6 @@ export default {
                 }
               </style>
             `,
-        }).then(() => {
-          // router.push("/businessDeliveriesLogin");
         });
       } finally {
         verifying.value = false;

@@ -89,9 +89,8 @@
       <Button
         variant="outline"
         v-if="registering"
-        class="mt-8 flex w-[100%] gap-5 border-[#66cc66] py-6"
+        class="mt-8 w-[100%] border-[#66cc66] py-6"
       >
-        <p class="text-[#66cc66]">Creating Account</p>
         <img :src="loader" alt="" class="w-10" />
       </Button>
       <Button
