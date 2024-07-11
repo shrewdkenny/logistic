@@ -1,6 +1,9 @@
 <template>
-  <div class="flex h-screen w-full items-center justify-center bg-[#ffffff]">
-    <img :src="loader" alt="" v-if="verifying" />
+  <div
+    v-if="verifying"
+    class="flex h-screen w-full items-center justify-center bg-[#ffffff]"
+  >
+    <img :src="loader" alt="" />
   </div>
 </template>
 

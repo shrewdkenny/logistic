@@ -1,76 +1,144 @@
 <template>
-  <div class="py-5 lg:px-28 lg:py-10">
+  <div class="py-5 lg:px-28">
     <HomePageHeader />
-    <div class="mt-40 flex items-center justify-center">
-      <div class="flex w-[30%] flex-col gap-2">
-        <h1 class="text-center text-2xl font-medium">Resend Password</h1>
-        <div class="relative mt-4 w-full">
-          <input
-            v-model="email"
-            type="type"
-            placeholder="i.e.xyz@emailprovider.com"
-            class="w-full rounded-lg border border-black px-4 py-3"
+  </div>
+  <div class="flex h-screen flex-col p-4 lg:items-center">
+    <div class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fad"
+        data-icon="cog"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        class="w-4"
+      >
+        <g class="fa-group">
+          <path
+            fill="currentColor"
+            d="M487.75 315.6l-42.6-24.6a192.62 192.62 0 0 0 0-70.2l42.6-24.6a12.11 12.11 0 0 0 5.5-14 249.2 249.2 0 0 0-54.7-94.6 12 12 0 0 0-14.8-2.3l-42.6 24.6a188.83 188.83 0 0 0-60.8-35.1V25.7A12 12 0 0 0 311 14a251.43 251.43 0 0 0-109.2 0 12 12 0 0 0-9.4 11.7v49.2a194.59 194.59 0 0 0-60.8 35.1L89.05 85.4a11.88 11.88 0 0 0-14.8 2.3 247.66 247.66 0 0 0-54.7 94.6 12 12 0 0 0 5.5 14l42.6 24.6a192.62 192.62 0 0 0 0 70.2l-42.6 24.6a12.08 12.08 0 0 0-5.5 14 249 249 0 0 0 54.7 94.6 12 12 0 0 0 14.8 2.3l42.6-24.6a188.54 188.54 0 0 0 60.8 35.1v49.2a12 12 0 0 0 9.4 11.7 251.43 251.43 0 0 0 109.2 0 12 12 0 0 0 9.4-11.7v-49.2a194.7 194.7 0 0 0 60.8-35.1l42.6 24.6a11.89 11.89 0 0 0 14.8-2.3 247.52 247.52 0 0 0 54.7-94.6 12.36 12.36 0 0 0-5.6-14.1zm-231.4 36.2a95.9 95.9 0 1 1 95.9-95.9 95.89 95.89 0 0 1-95.9 95.9z"
+            class="text-[#b8b8b8]"
+          ></path>
+          <path
+            fill="currentColor"
+            d="M256.35 319.8a63.9 63.9 0 1 1 63.9-63.9 63.9 63.9 0 0 1-63.9 63.9z"
+            class="text-[#393939]"
+          ></path>
+        </g>
+      </svg>
+      <h1>Settings</h1>
+    </div>
+    <div class="mt-3 flex flex-col rounded-xl bg-[#ffffff] p-6 lg:w-[50%]">
+      <h1 class="font-medium">Change Password</h1>
+      <div class="mt-5 flex flex-col gap-4">
+        <div>
+          <label for="Password" class="text-sm">New Password</label>
+          <Input
+            v-model="password"
+            type="password"
+            class="px-2 font-medium tracking-wide placeholder:text-lg placeholder:text-[#a8a8a8]"
           />
-          <label for="Email" class="absolute bottom-10 left-5 bg-white px-2"
-            >Email</label
-          >
+        </div>
+        <div>
+          <label for="Confimr Password" class="text-sm">Confirm Password</label>
+          <Input
+            v-model="confirmPassword"
+            type="password"
+            class="px-2 font-medium tracking-wide placeholder:text-lg placeholder:text-[#a8a8a8]"
+          />
         </div>
         <Button
-          @click="forgetPassword"
+          @click="resetPassword"
           variant="outline"
-          class="w-full bg-[#66cc66] py-6 text-[#ffffff]"
+          class="bg-[#66cc66] px-20 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
+          >Change Password</Button
         >
-          Continue
-        </Button>
+
+        <h1 class="mt-5 font-normal tracking-wider">Contact Details</h1>
+        <p class="text-md text-[#40bd57]">+234 814 337 1347</p>
+        <div class="flex gap-1">
+          <img src="@/assets/images/instagram.svg" alt="" class="w-5" />
+          <p class="text-[#40bd57]">@greensexlogistic</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import HomePageHeader from "@/components/HomePageHeader.vue";
+import Input from "@/components/ui/input/Input.vue";
 import { Button } from "@/components/ui/button";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import Swal from "sweetalert2";
+import HomePageHeader from "@/components/HomePageHeader.vue";
+
 export default {
+  name: "Test",
   components: {
-    HomePageHeader,
+    Input,
     Button,
+    HomePageHeader,
   },
   setup() {
     const router = useRouter();
-    const email = ref("");
+    const route = useRoute();
+    const password = ref("");
+    const confirmPassword = ref("");
     const baseUrl = import.meta.env.VITE_API_URL;
-    const forgetPassword = async () => {
-      const userEmail = {
-        email: email.value,
+    const resetPassword = async () => {
+      const userPassword = {
+        password: password.value,
+        confirmPassword: confirmPassword.value,
       };
       try {
-        const response = await fetch(`${baseUrl}/api/auth/forget-password`, {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
+        const token = route.query.password_token;
+        const response = await fetch(
+          `${baseUrl}/api/auth/reset-password?password_token=${token}`,
+          {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userPassword),
           },
-          body: JSON.stringify(userEmail),
-        });
+        );
         const data = await response.json();
         if (response.ok) {
-          console.log(data.message);
-          router.push("/settings");
+          Swal.fire({
+            position: "top-right",
+            width: "300px",
+            color: "red",
+            background: "#eeeff8",
+            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
+            showConfirmButton: false,
+            timer: 2000,
+          }).then(() => {
+            router.push("/businessDeliveriesLogin");
+          });
         } else {
-          console.log(data.message);
+        
+          Swal.fire({
+            position: "top-right",
+            width: "300px",
+            color: "red",
+            background: "#eeeff8",
+            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
+            showConfirmButton: false,
+            timer: 2000,
+          });
         }
       } catch (error) {
         console.log(error);
+      } finally {
       }
     };
-
     return {
-      email,
-      baseUrl,
-      forgetPassword,
+      password,
+      confirmPassword,
+      resetPassword,
       Swal,
     };
   },

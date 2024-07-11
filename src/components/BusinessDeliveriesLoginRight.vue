@@ -22,10 +22,14 @@
         >Password</label
       >
     </div>
+    <router-link to="/forget-password">
+      <p
+        class="mt-3 flex cursor-pointer justify-end text-sm text-[#40bd57] underline"
+      >
+        Forgot password?
+      </p></router-link
+    >
 
-    <p class="mt-3 flex justify-end text-sm text-[#40bd57] underline">
-      Forgot password?
-    </p>
     <Button
       v-if="logginIn"
       variant="outline"

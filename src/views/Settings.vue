@@ -17,6 +17,8 @@
       <div>
         <BusinessDashBoardHeader Heading="Settings" />
       </div>
+
+
       <div class="flex h-full flex-col bg-[#edeef7] p-4 lg:items-center">
         <div
           class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden"
@@ -89,7 +91,7 @@ import AsideSmallScreen from "@/components/AsideSmallScreen.vue";
 import BusinessDashBoardHeader from "@/components/BusinessDashBoardHeader.vue";
 import Input from "@/components/ui/input/Input.vue";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+
 import { useStore } from "@/stores/store";
 
 export default {
@@ -100,7 +102,7 @@ export default {
     BusinessDashBoardHeader,
     Input,
     Button,
-    Textarea,
+  
   },
 
   setup() {

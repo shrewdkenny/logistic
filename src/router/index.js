@@ -17,6 +17,7 @@ import VerifySignUp from "@/views/VerifySignUp.vue";
 import VerifyToken from "@/views/VerifyToken.vue";
 import ResendVerification from "@/views/ResendVerification.vue";
 import ResetPassword from "@/views/ResetPassword.vue";
+import ForgetPassword from "@/views/ForgetPassword.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -108,8 +109,13 @@ const router = createRouter({
       component: ResendVerification,
     },
     {
-      path: "/reset-password",
-      name: "reset-password",
+      path: "/forget-password",
+      name: "forget-password",
+     component: ForgetPassword
+    },
+    {
+      path: "/resetPassword",
+      name: "resetPassword",
       component: ResetPassword,
     },
   ],
