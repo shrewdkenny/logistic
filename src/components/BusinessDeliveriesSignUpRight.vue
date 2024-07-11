@@ -118,6 +118,7 @@ import { Button } from "@/components/ui/button";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import loader from "@/assets/images/loader.gif";
+import Swal from "sweetalert2";
 
 export default {
   name: "BusinessDeliveriesSignUp",
@@ -159,15 +160,41 @@ export default {
           },
           body: JSON.stringify(userData),
         });
+        const data = await response.json();
 
         if (response.ok) {
-          router.push("/verify-signup");
+          Swal.fire({
+            position: "top-right",
+            width: "300px",
+            color: "red",
+            background: "#eeeff8",
+            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
+            showConfirmButton: false,
+            timer: 2000,
+          }).then(() => {
+            router.push("/verify-signup");
+          });
         } else {
-          const errorData = await response.json();
-          console.error("Registration failed:", errorData);
+          Swal.fire({
+            position: "top-right",
+            width: "300px",
+            color: "red",
+            background: "#eeeff8",
+            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
+            showConfirmButton: false,
+            timer: 2000,
+          });
         }
       } catch (error) {
-        console.error("Error during registration:", error);
+        Swal.fire({
+          position: "top-right",
+          width: "300px",
+          color: "red",
+          background: "#eeeff8",
+          title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
+          showConfirmButton: false,
+          timer: 2000,
+        });
       } finally {
         registering.value = false;
       }

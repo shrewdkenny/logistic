@@ -15,7 +15,8 @@ import Support from "@/views/Support.vue";
 import Settings from "@/views/Settings.vue";
 import VerifySignUp from "@/views/VerifySignUp.vue";
 import VerifyToken from "@/views/VerifyToken.vue";
-// import ResendVerificationEmail from "@/views/ResendVerificationEmail.vue";
+import ResendVerification from "@/views/ResendVerification.vue";
+import ResetPassword from "@/views/ResetPassword.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -101,11 +102,16 @@ const router = createRouter({
       name: "verifyToken",
       component: VerifyToken,
     },
-    // {
-    //   path: "/resend-verification",
-    //   name: "resend-verification",
-    //   component: ResendVerificationEmail,
-    // },
+    {
+      path: "/resend-verification",
+      name: "resend-verification",
+      component: ResendVerification,
+    },
+    {
+      path: "/reset-password",
+      name: "reset-password",
+      component: ResetPassword,
+    },
   ],
 });
 
