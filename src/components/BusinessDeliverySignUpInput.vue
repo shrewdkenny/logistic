@@ -3,24 +3,26 @@
     <input
       :type="type"
       :placeholder="placeholder"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
       class="rounded-lg border border-black py-3 px-2 w-[100%]"
     />
-    <label for="first-name" class="absolute bottom-10 left-5 bg-white px-2">{{
-      label
-    }}</label>
+    <label class="absolute bottom-10 left-5 bg-white px-2">
+      {{ label }}
+    </label>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
 export default {
-  name: "Test",
+  name: "BusinessDeliverySignUpInput",
   props: {
     label: String,
     type: String,
     placeholder: String,
-  },
+    modelValue: String
+  }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

@@ -29,7 +29,7 @@
         Forgot password?
       </p></router-link
     >
-    <p class="text-red-500 text-center leading-5">{{ message }}</p>
+    <p class="text-center capitalize leading-5 text-red-500">{{ message }}</p>
     <Button
       v-if="logginIn"
       variant="outline"
@@ -95,18 +95,19 @@ export default {
         });
         const data = await response.json();
 
-        if (data.message === "User login successful") {
+        if (response.ok) {
           localStorage.setItem("accessToken", data.accessToken);
           localStorage.setItem("user", JSON.stringify(data.user));
-          router.push("/dashboard");
-          Swal.fire({
-            position: "top-right",
-            color: "#ffffff",
-            width: "300px",
-            background: "#66cc66",
-            timer: 2000,
-            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
-            showConfirmButton: false,
+          router.push("/dashboard").then(() => {
+            Swal.fire({
+              position: "top-right",
+              color: "#66cc66",
+              width: "300px",
+              background: "#ffffff",
+              timer: 2000,
+              title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
+              showConfirmButton: false,
+            });
           });
         } else {
           message.value = data.message;

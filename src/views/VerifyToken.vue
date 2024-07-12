@@ -1,13 +1,29 @@
 <template>
-  <div
-    v-if="verifying"
-    class="flex h-screen w-full items-center justify-center bg-[#ffffff]"
-  >
-    <img :src="loader" alt="" />
+  <div class="py-5 lg:px-28 lg:py-10">
+    <HomePageHeader />
+
+    <div
+      class="flex h-screen w-full flex-col items-center justify-center bg-[#ffffff]"
+    >
+      <img :src="loader" alt="" v-if="verifying" />
+      <div v-else class="flex flex-col gap-5">
+        <p class="text-lg text-red-500">{{ message }}</p>
+        <router-link to="/businessDeliveriesLogin">
+          <Button
+            variant="outline"
+            class="w-full bg-[#66cc66] py-6 text-[#ffffff]"
+          >
+            Login
+          </Button></router-link
+        >
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { Button } from "@/components/ui/button";
+import HomePageHeader from "@/components/HomePageHeader.vue";
 import loader from "@/assets/images/loader.gif";
 import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
@@ -15,10 +31,15 @@ import Swal from "sweetalert2";
 
 export default {
   name: "Test",
+  components: {
+    HomePageHeader,
+    Button,
+  },
   setup() {
     const router = useRouter();
     const route = useRoute();
     const verifying = ref(true);
+    const message = ref("");
     const requestSent = ref(false);
     const baseUrl = import.meta.env.VITE_API_URL;
 
@@ -40,81 +61,23 @@ export default {
           },
         );
         const data = await response.json();
-        if (data.message === "Email successfully verified") {
+        if (response.ok) {
           Swal.fire({
-            position: "center",
-            color: "#66cc66",
-            title:
-              "<p style='font-size: 30px; font-weight: 500; font-family: sans-serif;'>Verification successful.</p>",
-            showConfirmButton: true,
-            customClass: {
-              confirmButton: "custom-confirm-button",
-            },
-            buttonsStyling: false,
-            html: `
-              <style>
-                .swal2-confirm.custom-confirm-button {
-                  border: none;
-                  padding: 10px 20px;
-                  background-color: #66cc66;
-                  color: white;
-                  border-radius: 5px;
-                  outline: none; 
-                }
-              </style>
-            `,
+            position: "top-right",
+            color: "#ffffff",
+            width: "300px",
+            background: "#66cc66",
+            timer: 2000,
+            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
+            showConfirmButton: false,
           }).then(() => {
             router.push("/businessDeliveriesLogin");
           });
-        } else if (data.message === "Verification token is invalid") {
-          Swal.fire({
-            position: "center",
-            color: "red",
-            title:
-              "<p style='font-size: 30px; font-weight: 500; font-family: sans-serif;'>Verification Failed.</p>",
-            showConfirmButton: true,
-            customClass: {
-              confirmButton: "custom-confirm-button",
-            },
-            buttonsStyling: false,
-            html: `
-              <style>
-                .swal2-confirm.custom-confirm-button {
-                  border: none;
-                  padding: 10px 20px;
-                  background-color: #66cc66;
-                  color: white;
-                  border-radius: 5px;
-                  outline: none; 
-                }
-              </style>
-            `,
-          });
+        } else {
+          message.value = data.message;
         }
       } catch (error) {
-        Swal.fire({
-          position: "center",
-          color: "red",
-          title:
-            "<p style='font-size: 30px; font-weight: 500; font-family: sans-serif;'>Verification Failed.</p>",
-          showConfirmButton: true,
-          customClass: {
-            confirmButton: "custom-confirm-button",
-          },
-          buttonsStyling: false,
-          html: `
-              <style>
-                .swal2-confirm.custom-confirm-button {
-                  border: none;
-                  padding: 10px 20px;
-                  background-color: #66cc66;
-                  color: white;
-                  border-radius: 5px;
-                  outline: none; 
-                }
-              </style>
-            `,
-        });
+        message.value = data.message;
       } finally {
         verifying.value = false;
       }
@@ -126,6 +89,7 @@ export default {
 
     return {
       verifying,
+      message,
       loader,
       Swal,
     };

@@ -2,90 +2,82 @@
   <div class="flex w-full flex-col lg:w-1/2">
     <h1 class="text-center text-3xl font-normal leading-9">Create Account</h1>
     <div class="flex flex-col gap-2">
-      <div class="relative mt-7 w-full">
-        <input
-          v-model="firstName"
-          type="type"
-          class="w-[100%] rounded-lg border border-black px-2 py-3"
-        />
-        <label for="first-name" class="absolute bottom-10 left-5 bg-white px-2"
-          >First Name</label
-        >
-      </div>
-      <div class="relative mt-7 w-full">
-        <input
-          v-model="lastName"
-          type="type"
-          class="w-[100%] rounded-lg border border-black px-2 py-3"
-        />
-        <label for="last-name" class="absolute bottom-10 left-5 bg-white px-2"
-          >Last Name</label
-        >
-      </div>
-      <div class="relative mt-7 w-full">
-        <input
-          v-model="phoneNumber"
-          placeholder="+234"
-          type="type"
-          class="w-[100%] rounded-lg border border-black px-2 py-3"
-        />
-        <label
-          for="phone-number"
-          class="absolute bottom-10 left-5 bg-white px-2"
-          >Phone Number</label
-        >
-      </div>
-      <div class="relative mt-7 w-full">
-        <input
-          v-model="password"
-          type="password"
-          class="w-[100%] rounded-lg border border-black px-2 py-3"
-        />
-        <label for="password" class="absolute bottom-10 left-5 bg-white px-2"
-          >password</label
-        >
-      </div>
-      <div class="relative mt-7 w-full">
-        <input
-          v-model="passwordConfirmation"
-          type="password"
-          class="w-[100%] rounded-lg border border-black px-2 py-3"
-        />
-        <label
-          for="confirm-password"
-          class="absolute bottom-10 left-5 bg-white px-2"
-          >Confirm Password</label
-        >
-      </div>
-      <div class="relative mt-7 w-full">
-        <input
-          v-model="email"
-          type="type"
-          class="w-[100%] rounded-lg border border-black px-2 py-3"
-        />
-        <label
-          for="Corporate Email"
-          class="absolute bottom-10 left-5 bg-white px-2"
-          >Corporate Email</label
-        >
-      </div>
-      <div class="relative mt-7 w-full">
-        <input
-          v-model="companyAddress"
-          type="type"
-          class="w-[100%] rounded-lg border border-black px-2 py-3"
-        />
-        <label
-          for="Corporate Email"
-          class="absolute bottom-10 left-5 bg-white px-2"
-          >Company Address</label
-        >
-      </div>
+      <BusinessDeliverySignUpInput
+        v-model:modelValue="firstName"
+        label="First Name"
+        type="text"
+        placeholder="Enter your first name"
+      />
+      <p v-if="errors.firstName" class="text-sm text-red-500">
+        {{ errors.firstName }}
+      </p>
 
+      <BusinessDeliverySignUpInput
+        v-model:modelValue="lastName"
+        label="Last Name"
+        type="text"
+        placeholder="Enter your last name"
+      />
+      <p v-if="errors.lastName" class="text-sm text-red-500">
+        {{ errors.lastName }}
+      </p>
+
+      <BusinessDeliverySignUpInput
+        v-model:modelValue="phoneNumber"
+        label="Phone Number"
+        type="number"
+        placeholder="+234"
+      />
+      <p v-if="errors.phoneNumber" class="text-sm text-red-500">
+        {{ errors.phoneNumber }}
+      </p>
+
+      <BusinessDeliverySignUpInput
+        v-model:modelValue="password"
+        label="Password"
+        type="password"
+        placeholder="Enter your password"
+      />
+      <p v-if="errors.password" class="text-sm text-red-500">
+        {{ errors.password }}
+      </p>
+
+      <BusinessDeliverySignUpInput
+        v-model:modelValue="passwordConfirmation"
+        label="Confirm Password"
+        type="password"
+        placeholder="Confirm your password"
+      />
+      <p v-if="errors.passwordConfirmation" class="text-sm text-red-500">
+        {{ errors.passwordConfirmation }}
+      </p>
+
+      <BusinessDeliverySignUpInput
+        v-model:modelValue="email"
+        label="Corporate Email"
+        type="email"
+        placeholder="Enter your corporate email"
+      />
+      <p v-if="errors.email" class="text-sm text-red-500">{{ errors.email }}</p>
+
+      <BusinessDeliverySignUpInput
+        v-model:modelValue="companyAddress"
+        label="Company Address"
+        type="text"
+        placeholder="Enter your company address"
+      />
+      <p v-if="errors.companyAddress" class="text-sm text-red-500">
+        {{ errors.companyAddress }}
+      </p>
+      <p class="text-center text-sm text-red-500">{{ message }}</p>
       <div class="mt-5 flex items-center gap-1">
-        <input type="checkbox" v-model="acceptTerms" />
+        <input v-model="acceptTerms" required type="checkbox" />
         <p class="text-sm font-medium">Accept terms and conditions</p>
       </div>
+      <p v-if="errors.acceptTerms" class="text-sm text-red-500">
+        {{ errors.acceptTerms }}
+      </p>
+
       <Button
         variant="outline"
         v-if="registering"
@@ -93,6 +85,7 @@
       >
         <img :src="loader" alt="" class="w-10" />
       </Button>
+
       <Button
         v-else
         @click="registerUser"
@@ -138,8 +131,33 @@ export default {
     const companyAddress = ref("");
     const acceptTerms = ref(false);
     const registering = ref(false);
+    const errors = ref({});
+    const message = ref("");
+
+    const validateForm = () => {
+      const newErrors = {};
+      if (!firstName.value) newErrors.firstName = "First Name cannot be empty";
+      if (!lastName.value) newErrors.lastName = "Last Name cannot be empty";
+      if (!phoneNumber.value)
+        newErrors.phoneNumber = "Phone Number cannot be empty";
+      if (!password.value) newErrors.password = "Password cannot be empty";
+      if (!passwordConfirmation.value)
+        newErrors.passwordConfirmation =
+          "Password Confirmation cannot be empty";
+      if (!email.value) newErrors.email = "Email cannot be empty";
+      if (!companyAddress.value)
+        newErrors.companyAddress = "Company Address cannot be empty";
+      if (!acceptTerms.value)
+        newErrors.acceptTerms = "You must accept the terms and conditions";
+      errors.value = newErrors;
+      return Object.keys(newErrors).length === 0;
+    };
 
     const registerUser = async () => {
+      if (!validateForm()) {
+        return;
+      }
+
       const userData = {
         firstName: firstName.value,
         lastName: lastName.value,
@@ -161,40 +179,13 @@ export default {
           body: JSON.stringify(userData),
         });
         const data = await response.json();
-
         if (response.ok) {
-          Swal.fire({
-            position: "top-right",
-            width: "300px",
-            color: "red",
-            background: "#eeeff8",
-            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
-            showConfirmButton: false,
-            timer: 2000,
-          }).then(() => {
-            router.push("/verify-signup");
-          });
+          router.push("/verify-signup");
         } else {
-          Swal.fire({
-            position: "top-right",
-            width: "300px",
-            color: "red",
-            background: "#eeeff8",
-            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
-            showConfirmButton: false,
-            timer: 2000,
-          });
+          message.value = data.message;
         }
       } catch (error) {
-        Swal.fire({
-          position: "top-right",
-          width: "300px",
-          color: "red",
-          background: "#eeeff8",
-          title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
-          showConfirmButton: false,
-          timer: 2000,
-        });
+        message.value = data.message;
       } finally {
         registering.value = false;
       }
@@ -209,12 +200,15 @@ export default {
       email,
       companyAddress,
       acceptTerms,
+      validateForm,
       registerUser,
       registering,
       loader,
+      errors,
+      message,
     };
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
