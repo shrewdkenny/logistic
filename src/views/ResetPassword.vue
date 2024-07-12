@@ -2,34 +2,11 @@
   <div class="py-5 lg:px-28">
     <HomePageHeader />
   </div>
-  <div class="flex h-screen flex-col p-4 lg:items-center">
+  <div class="flex h-screen flex-col p-2 lg:p-4 lg:items-center">
     <div class="flex items-center justify-end gap-1 text-[#8f8f8f] lg:hidden">
-      <svg
-        aria-hidden="true"
-        focusable="false"
-        data-prefix="fad"
-        data-icon="cog"
-        role="img"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        class="w-4"
-      >
-        <g class="fa-group">
-          <path
-            fill="currentColor"
-            d="M487.75 315.6l-42.6-24.6a192.62 192.62 0 0 0 0-70.2l42.6-24.6a12.11 12.11 0 0 0 5.5-14 249.2 249.2 0 0 0-54.7-94.6 12 12 0 0 0-14.8-2.3l-42.6 24.6a188.83 188.83 0 0 0-60.8-35.1V25.7A12 12 0 0 0 311 14a251.43 251.43 0 0 0-109.2 0 12 12 0 0 0-9.4 11.7v49.2a194.59 194.59 0 0 0-60.8 35.1L89.05 85.4a11.88 11.88 0 0 0-14.8 2.3 247.66 247.66 0 0 0-54.7 94.6 12 12 0 0 0 5.5 14l42.6 24.6a192.62 192.62 0 0 0 0 70.2l-42.6 24.6a12.08 12.08 0 0 0-5.5 14 249 249 0 0 0 54.7 94.6 12 12 0 0 0 14.8 2.3l42.6-24.6a188.54 188.54 0 0 0 60.8 35.1v49.2a12 12 0 0 0 9.4 11.7 251.43 251.43 0 0 0 109.2 0 12 12 0 0 0 9.4-11.7v-49.2a194.7 194.7 0 0 0 60.8-35.1l42.6 24.6a11.89 11.89 0 0 0 14.8-2.3 247.52 247.52 0 0 0 54.7-94.6 12.36 12.36 0 0 0-5.6-14.1zm-231.4 36.2a95.9 95.9 0 1 1 95.9-95.9 95.89 95.89 0 0 1-95.9 95.9z"
-            class="text-[#b8b8b8]"
-          ></path>
-          <path
-            fill="currentColor"
-            d="M256.35 319.8a63.9 63.9 0 1 1 63.9-63.9 63.9 63.9 0 0 1-63.9 63.9z"
-            class="text-[#393939]"
-          ></path>
-        </g>
-      </svg>
-      <h1>Settings</h1>
+      <h1>change password</h1>
     </div>
-    <div class="mt-3 flex flex-col rounded-xl bg-[#ffffff] p-6 lg:w-[50%]">
+    <div class="mt-3 flex flex-col rounded-xl bg-[#ffffff] lg:p-6 lg:w-[50%]">
       <h1 class="font-medium">Change Password</h1>
       <div class="mt-5 flex flex-col gap-4">
         <div>
@@ -40,6 +17,7 @@
             class="px-2 font-medium tracking-wide placeholder:text-lg placeholder:text-[#a8a8a8]"
           />
         </div>
+
         <div>
           <label for="Confimr Password" class="text-sm">Confirm Password</label>
           <Input
@@ -47,11 +25,21 @@
             type="password"
             class="px-2 font-medium tracking-wide placeholder:text-lg placeholder:text-[#a8a8a8]"
           />
+          <p class="mt-2 text-center text-red-500">{{ message }}</p>
         </div>
         <Button
+          v-if="resetting"
+          variant="outline"
+          class="mt-8 w-[100%] border-[#66cc66] py-6"
+        >
+          <img :src="loader" alt="" class="w-10" />
+        </Button>
+
+        <Button
+          v-else
           @click="resetPassword"
           variant="outline"
-          class="bg-[#66cc66] px-20 py-6 text-[#ffffff] hover:border-black hover:bg-[#ffffff] hover:text-black"
+          class="bg-[#66cc66] px-20 py-6 text-[#ffffff]"
           >Change Password</Button
         >
 
@@ -73,6 +61,7 @@ import { ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import Swal from "sweetalert2";
 import HomePageHeader from "@/components/HomePageHeader.vue";
+import loader from "@/assets/images/loader.gif";
 
 export default {
   name: "Test",
@@ -86,6 +75,8 @@ export default {
     const route = useRoute();
     const password = ref("");
     const confirmPassword = ref("");
+    const message = ref("");
+    const resetting = ref(false);
     const baseUrl = import.meta.env.VITE_API_URL;
     const resetPassword = async () => {
       const userPassword = {
@@ -93,6 +84,7 @@ export default {
         confirmPassword: confirmPassword.value,
       };
       try {
+        resetting.value = true;
         const token = route.query.password_token;
         const response = await fetch(
           `${baseUrl}/api/auth/reset-password?password_token=${token}`,
@@ -110,7 +102,7 @@ export default {
           Swal.fire({
             position: "top-right",
             width: "300px",
-            color: "red",
+            color: "green",
             background: "#eeeff8",
             title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
             showConfirmButton: false,
@@ -119,25 +111,20 @@ export default {
             router.push("/businessDeliveriesLogin");
           });
         } else {
-        
-          Swal.fire({
-            position: "top-right",
-            width: "300px",
-            color: "red",
-            background: "#eeeff8",
-            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
-            showConfirmButton: false,
-            timer: 2000,
-          });
+          message.value = data.message;
         }
       } catch (error) {
-        console.log(error);
+        message.value = data.message;
       } finally {
+        resetting.value = false;
       }
     };
     return {
       password,
       confirmPassword,
+      message,
+      resetting,
+      loader,
       resetPassword,
       Swal,
     };

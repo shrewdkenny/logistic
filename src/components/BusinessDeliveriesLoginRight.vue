@@ -29,7 +29,7 @@
         Forgot password?
       </p></router-link
     >
-
+    <p class="text-red-500 text-center leading-5">{{ message }}</p>
     <Button
       v-if="logginIn"
       variant="outline"
@@ -76,7 +76,7 @@ export default {
     const email = ref("");
     const password = ref("");
     const logginIn = ref(false);
-
+    const message = ref("");
     const loginUser = async () => {
       const userData = {
         email: email.value,
@@ -109,28 +109,10 @@ export default {
             showConfirmButton: false,
           });
         } else {
-          Swal.fire({
-            position: "top-right",
-            width: "300px",
-            color: "red",
-            background: "#eeeff8",
-            title: `<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>${data.message}</p>`,
-            showConfirmButton: false,
-            timer: 2000,
-          });
+          message.value = data.message;
         }
       } catch (error) {
-        console.error("An error occurred:", error);
-        Swal.fire({
-          position: "top-right",
-          width: "300px",
-          color: "red",
-          background: "#eeeff8",
-          title:
-            "<p style='font-size: 15px; font-weight: 400; font-family: sans-serif;'>An error occurred.</p>",
-          showConfirmButton: false,
-          timer: 2000,
-        });
+        message.value = data.message;
       } finally {
         logginIn.value = false;
       }
@@ -143,6 +125,7 @@ export default {
       password,
       logginIn,
       loginUser,
+      message,
     };
   },
 };
